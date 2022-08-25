@@ -41,21 +41,43 @@ var eventsFun = function(citySearch, state, dates) {
         })
         .then(function (data) {
             console.log(data);
-            eventsLoop(data);
+            shuffleArray(data);
         })
     };
 
+const shuffleArray = function (data) {
+    var arrayShuffle = data.events_results;
+        for (let i = arrayShuffle.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const temp = arrayShuffle[i];
+          arrayShuffle[i] = arrayShuffle[j];
+          arrayShuffle[j] = temp;
+
+        //   console.log(arrayShuffle[i])
+        eventsLoop(arrayShuffle[i]);
+
+        // console.log(arrayShuffle[j].event_location_map.link)
+        }
+};
+
 var eventsLoop = function(data) {
-    var eventAddress = data.events_results;
 
-for (var i = 0; i <= eventAddress.length; i++) {
+    console.log(data)
 
-    console.log(eventAddress[i].event_location_map.link);
+for (var i = 0; i < data.length; i++) {
 
-// searchEvent(eventAddress[i].address[0]);
-// var contentTest = createAttribute 
-// divTest.textContent(eventAddress[i].address[0])
+    var resultsSpan = document.createElement("div");
+    resultsSpan.textContent = data[i].link;
 
+    var titleSpan = document.createElement("div");
+    titleSpan.textContent = data[i].title;
+
+    var descriptionSpan = document.createElement("div");
+    descriptionSpan.textContent = data[i].description;
+
+    divTest.append(titleSpan);
+    divTest.append(descriptionSpan);
+    divTest.append(resultsSpan);
 }};
 
 cityGet.addEventListener("submit", formSubmit);
