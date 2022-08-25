@@ -63,9 +63,10 @@ const shuffleArray = function (data) {
 var eventsLoop = function(data) {
 
     console.log(data)
-    var i =0;
+    var i = 0;
+
     //lol i dunno why this works but it does lots of tears got us to this point 
-    if(i<5){
+    if(i<=5){
 
 
     var resultsSpan = document.createElement("div");
@@ -80,7 +81,7 @@ var eventsLoop = function(data) {
     divTest.append(titleSpan);
     divTest.append(descriptionSpan);
     divTest.append(resultsSpan);
-    }
+    };
     i++
 
 }
