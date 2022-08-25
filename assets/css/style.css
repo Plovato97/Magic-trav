@@ -1,0 +1,112 @@
+body {
+    /* Would not display on mac unless written this way due to file path error */
+    background-image:url(../images/landingpageimg.png);
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Landing Page Fade */
+.fade1 {
+    font-size: 100px;
+    animation: fadeIn 10s;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #b46efa;
+    font-family: "segoe script";
+}
+
+.fade2 {
+    font-size: 35px;
+    animation: fadeIn-s 15s;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px #b46efa;
+    font-family: "segoe print";
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes fadeIn-s {
+    0% {opacity: 0;}
+    25% {opacity: 0;}
+    75% {opacity: .5}
+    100% {opacity: 1;}
+}
+
+/* Landing Page Button */
+.btn-lp {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    top: 110px;
+    font-family: "segoe print";
+    animation: fadeIn-btn 20s;
+}
+
+.btn-lp:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn-lp:active {
+    color: #000
+}
+
+.btn-lp:active:after {
+    background: transparent;
+}
+
+.btn-lp:hover:before {
+    opacity: 1;
+}
+
+.btn-lp:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@keyframes fadeIn-btn {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    75% {opacity: .75;}
+    100% {opacity: 1;}
+}
