@@ -5,8 +5,9 @@ var cityGet = document.querySelector("#user-form")
 var inputEl = document.querySelector("#cityInput")
 var dateEl = document.querySelector("#dateInput")
 var statesEl = document.querySelector("#statesSelect")
+var divTest = document.querySelector("#testLinks")
 
-
+// uses the submit form eleement to gather the date/city/state paremeters to be used on other functions
 var formSubmit = function(event) {
     event.preventDefault();
 
@@ -17,7 +18,7 @@ var formSubmit = function(event) {
 
     if (cityName && cityDate && statesSelector) {
         eventsFun(cityName, statesSelector, cityDate);
-        searchCity(cityName, statesSelector);
+        // searchCity(cityName, statesSelector);
         inputEl.value = "";
         dateEl.value = "";
         statesEl.value = "";
@@ -31,29 +32,7 @@ var formSubmit = function(event) {
     console.log(event);
 };
 
-var searchCity = function(citySearch, state) {
-    var cordApiUrl = "https://api.geoapify.com/v1/geocode/search?text=" + citySearch + "%20" + state + "&apiKey=" + paulApiKey + "";
-    fetch(cordApiUrl)
-        .then(function (res) {
-            return res.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            getCord(data)
-        })
-    };
-
-
-var getCord = function(data) {
-    var cityLattidue = data.features[0].properties.lat;
-    var cityLongitude = data.features[0].properties.lon;
-
-    console.log(cityLattidue);
-    console.log(cityLongitude);
-
-    // routePlan(cityLattidue, cityLongitude);
-};
-
+//  eventsfun uses the parameters for citysearch, state and date to search through the api and create an array of available events within those paremeters
 var eventsFun = function(citySearch, state, dates) {
     var eventsApi = "https://serpapi.com/search.json?engine=google_events&q=Events+in+" + citySearch + "+" + state + "+" + dates + "&api_key=cf8b1e356c94fd5a088afa5884193906daf90a725ab4763d792e35a05f4a8ef9";
     fetch(eventsApi)
@@ -62,52 +41,21 @@ var eventsFun = function(citySearch, state, dates) {
         })
         .then(function (data) {
             console.log(data);
-            eventsAddress(data);
+            eventsLoop(data);
         })
     };
-var searchEvent = function(address) {
-        var cordApiUrl = "https://api.geoapify.com/v1/geocode/search?text=" + address + "&apiKey=" + paulApiKey + "";
-        fetch(cordApiUrl)
-            .then(function (res) {
-                return res.json();
-            })
-            .then(function (data) {
-                console.log(data);
-                eventCord(data)
-            })
-};
 
-var eventsAddress = function(data) {
-    var eventAddress = data.events_results[0].address[0];
-    // console.log(eventAddress);
-    
-    // var addressSplit = text.split(eventAddress);
+var eventsLoop = function(data) {
+    var eventAddress = data.events_results;
 
-    
-    // for (var i = i < eventAddress.length; i++)
+for (var i = 0; i <= eventAddress.length; i++) {
 
+    console.log(eventAddress[i].event_location_map.link);
 
-    searchEvent(eventAddress);
-}
+// searchEvent(eventAddress[i].address[0]);
+// var contentTest = createAttribute 
+// divTest.textContent(eventAddress[i].address[0])
 
-var eventCord = function(data) {
-    var EventLattidue = data.features[0].properties.lat;
-    var EventLongitude = data.features[0].properties.lon;
-    
-    console.log(EventLattidue);
-    console.log(EventLongitude);
-
-}
-//  var routePlan = function(long, lat, long2, lat2) {
-//         var routeApi = "https://api.geoapify.com/v1/routing?waypoints=" + long + "," + lat + "|" + long2 + "," + lat2 + "&mode=drive&apiKey=" + paulApiKey + "";
-//         fetch(routeApi)
-//             .then(function (res) {
-//                 return res.json();
-//             })
-//             .then(function (data) {
-//                 console.log(data);
-//                 getCord(data)
-//             })
-// };
+}};
 
 cityGet.addEventListener("submit", formSubmit);
