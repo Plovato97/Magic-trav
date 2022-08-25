@@ -62,7 +62,7 @@ var eventsFun = function(citySearch, state, dates) {
         })
         .then(function (data) {
             console.log(data);
-            eventCord(data)
+            eventsAddress(data);
         })
     };
 var searchEvent = function(address) {
@@ -79,6 +79,14 @@ var searchEvent = function(address) {
 
 var eventsAddress = function(data) {
     var eventAddress = data.events_results[0].address[0];
+    // console.log(eventAddress);
+    
+    // var addressSplit = text.split(eventAddress);
+
+    
+    // for (var i = i < eventAddress.length; i++)
+
+
     searchEvent(eventAddress);
 }
 
