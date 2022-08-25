@@ -103,3 +103,4 @@ var eventCord = function(data) {
 // };
 
 cityGet.addEventListener("submit", formSubmit);
+
