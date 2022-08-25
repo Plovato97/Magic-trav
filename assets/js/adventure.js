@@ -63,21 +63,26 @@ const shuffleArray = function (data) {
 var eventsLoop = function(data) {
 
     console.log(data)
+    var i =0;
+    //lol i dunno why this works but it does lots of tears got us to this point 
+    if(i<5){
 
-for (var i = 0; i < data.length; i++) {
 
     var resultsSpan = document.createElement("div");
-    resultsSpan.textContent = data[i].link;
+    resultsSpan.textContent = data.event_location_map.link;
 
     var titleSpan = document.createElement("div");
-    titleSpan.textContent = data[i].title;
+    titleSpan.textContent = data.title;
 
     var descriptionSpan = document.createElement("div");
-    descriptionSpan.textContent = data[i].description;
+    descriptionSpan.textContent = data.description;
 
     divTest.append(titleSpan);
     divTest.append(descriptionSpan);
     divTest.append(resultsSpan);
-}};
+    }
+    i++
+
+}
 
 cityGet.addEventListener("submit", formSubmit);
