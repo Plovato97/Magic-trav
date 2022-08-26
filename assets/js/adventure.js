@@ -67,20 +67,37 @@ var eventsLoop = function(data) {
 
     //lol i dunno why this works but it does lots of tears got us to this point 
     if(i<=5){
+    
+    var cardShell = document.createElement("div");
+    var cardContent = document.createElement("div")
+    cardContent.classList.add("card","h-100p","u-flex","u-flex-column")
 
-
-    var resultsSpan = document.createElement("div");
-    resultsSpan.textContent = data.event_location_map.link;
-
-    var titleSpan = document.createElement("div");
+    var titleSpan = document.createElement("p");
     titleSpan.textContent = data.title;
+    titleSpan.classList.add("title");
 
-    var descriptionSpan = document.createElement("div");
+    var descriptionSpan = document.createElement("span");
     descriptionSpan.textContent = data.description;
+    descriptionSpan.classList.add("subtitle")
 
-    divTest.append(titleSpan);
-    divTest.append(descriptionSpan);
-    divTest.append(resultsSpan);
+
+    var resultsSpan = document.createElement("a");
+    resultsSpan.textContent = "LET'S GO!";
+    resultsSpan.link = data.event_location_map.link;
+    resultsSpan.classList.add("btn","btn-link","outline","");
+
+   
+
+    //MAIN CONTENT HOLDER FOR ALL CARDS
+    divTest.append(cardShell);
+
+    //Appends Card Content to card shell
+    cardShell.append(cardContent);
+    //added content of card to card to display
+    cardContent.append(titleSpan);
+    cardContent.append(descriptionSpan);
+    cardContent.append(resultsSpan);
+    
     };
     i++
 
