@@ -9,13 +9,13 @@ Given a dashboard of different adventures, WHEN I search for a journey Then I am
 
 ## Made With:
 
-1.jQuery
-2.Bulma
-3.javascript
-4.html5
-5.css
+* jQuery
+* Bulma
+* javascript
+* html5
+* css
 
 APIs
 
-1.Eventbrite- Organizer/events/tickets
-2.Geoapify- Maps/locater/routing
+* Eventbrite- Organizer/events/tickets
+* Geoapify- Maps/locater/routing
