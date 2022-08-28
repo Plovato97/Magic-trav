@@ -50,15 +50,19 @@ body {
 
 .lens-img {
     width: 350px;
-    height: 300px;
+    height: 200px;
+    border: 2px solid #f5f5f5;
 }
 
 .cam-img {
     width: 350px;
-    height: 300px;
+    height: 200px;
+    border: 2px solid #f5f5f5;
 }
 
-.plane-img {
+.driving-img {
     width: 350px;
-    height: 300px;
+    height: 200px;
+    border: 2px solid #f5f5f5;
+
 }
