@@ -7,7 +7,7 @@ As A Hodophile I Want to explore new places so that I can find interesting facts
 
 Given a dashboard of different adventures, WHEN I search for a journey Then I am presented with varities of Cites With a TIME that randomly remotes me to an spontaneous location from the EVENTBRITE Website
 
-## Made With:
+## Made With
 
 * jQuery
 * Bulma
@@ -15,7 +15,7 @@ Given a dashboard of different adventures, WHEN I search for a journey Then I am
 * html5
 * css
 
-APIs
+### APIs
 
 * Eventbrite- Organizer/events/tickets
 * Geoapify- Maps/locater/routing
