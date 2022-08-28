@@ -68,23 +68,34 @@ var eventsLoop = function(data) {
     //lol i dunno why this works but it does lots of tears got us to this point 
     if(i<=5){
     
+    //main DIV to display results it is a grid to keep them in line
     var cardShell = document.createElement("div");
-    var cardContent = document.createElement("div")
-    cardContent.classList.add("card","h-100p","u-flex","u-flex-column")
+
+    var cardContent = document.createElement("div");
+    cardContent.classList.add("card","h-100p","u-flex","u-flex-column");
+
+    //container div for contents to display correctly i.e title and subtitle 
+    var cardContainer = document.createElement("div");
+    cardContainer.classList.add("card__title-container");
+
+
+    //adding stock img to card
+    var img = document.createElement("img");
+    img.src = ""
 
     var titleSpan = document.createElement("p");
     titleSpan.textContent = data.title;
     titleSpan.classList.add("title");
 
-    var descriptionSpan = document.createElement("span");
+    var descriptionSpan = document.createElement("div");
     descriptionSpan.textContent = data.description;
-    descriptionSpan.classList.add("subtitle")
+    descriptionSpan.classList.add("content")
 
 
     var resultsSpan = document.createElement("a");
     resultsSpan.textContent = "LET'S GO!";
     resultsSpan.link = data.event_location_map.link;
-    resultsSpan.classList.add("btn","btn-link","outline","");
+    resultsSpan.classList.add("btn","btn-link","outline");
 
    
 
@@ -93,10 +104,16 @@ var eventsLoop = function(data) {
 
     //Appends Card Content to card shell
     cardShell.append(cardContent);
+    cardShell.append(cardImg);
+
+    cardContent.append(cardContainer);
+
     //added content of card to card to display
-    cardContent.append(titleSpan);
-    cardContent.append(descriptionSpan);
-    cardContent.append(resultsSpan);
+    cardContainer.append(titleSpan);
+    cardContainer.append(descriptionSpan);
+
+
+    cardContainer.append(resultsSpan);
     
     };
     i++
