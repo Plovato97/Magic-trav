@@ -1,0 +1,64 @@
+body {
+    background-image:url(/assets/images/backgroundimg.jpeg);
+    background-size: cover;
+}
+
+.container {
+    align-items: flex-start;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.description {
+    color: #18333d;
+    margin-top: 200px;
+    float: left;
+    width: 800px;
+    margin-left: 200px;
+    background-color: #f5f5f5;
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.search {
+    float: right;
+    margin-right: 200px;
+    width: 600px;
+    margin-top: 140px;
+}
+
+.date {
+    width: 600px;
+    margin-left: 300px;
+    float: right;
+    margin-right: 200px;
+}
+
+.column {
+    width: 400px;
+    margin-top: 150px;
+}
+
+.row {
+    content: "";
+    display: flex;
+    clear: both;
+    justify-content: space-evenly;
+    margin-left: 150px;
+}
+
+.lens-img {
+    width: 350px;
+    height: 300px;
+}
+
+.cam-img {
+    width: 350px;
+    height: 300px;
+}
+
+.plane-img {
+    width: 350px;
+    height: 300px;
+}
