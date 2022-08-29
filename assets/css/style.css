@@ -1,6 +1,6 @@
 body {
-    background-image:url(/assets/images/landingpageimg.png);
-    overflow: hidden;
+    /* Would not display on mac unless written this way due to file path error */
+    background-image:url(../images/landingpageimg.png);
 }
 
 .center {
