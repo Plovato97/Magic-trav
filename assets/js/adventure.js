@@ -5,7 +5,12 @@ var cityGet = document.querySelector("#user-form")
 var inputEl = document.querySelector("#cityInput")
 var dateEl = document.querySelector("#dateInput")
 var statesEl = document.querySelector("#statesSelect")
-var divTest = document.querySelector("#testLinks")
+var divTest1 = document.querySelector("#cardE1")
+var divTest2 = document.querySelector("#cardE2")
+var divTest3 = document.querySelector("#cardE3")
+var divTest4 = document.querySelector("#cardE4")
+var divTest5 = document.querySelector("#cardE5")
+var divTest6 = document.querySelector("#cardE6")
 var fortuneEl = document.querySelector("#fortuneTest")
 var adventureSubmit = document.querySelector("#adventureSubmit")
 
@@ -80,17 +85,25 @@ var eventRandom = shuffle(data.events_results);
     var resultsBtn= document.createElement("a");
     resultsBtn.setAttribute("target", "_blank")
     resultsBtn.textContent = "Begin your Journey"
+    resultsBtn.classList.add("button",)
     resultsBtn.href = eventRandom[1].event_location_map.link;
 
     var titleSpan = document.createElement("div");
+    titleSpan.classList.add("card__mobile-title")
     titleSpan.textContent = eventRandom[1].title;
 
     var descriptionSpan = document.createElement("div");
+    descriptionSpan.classList.add("card__body")
     descriptionSpan.textContent = eventRandom[1].description;
 
-    divTest.appendChild(titleSpan);
-    divTest.appendChild(descriptionSpan);
-    divTest.appendChild(resultsBtn);
+    var imageHolder = document.createElement("img");
+    imageHolder.src = "assets/images/placeholder.jpeg";
+    var src = document.getElementById("imgE1");
+    src.appendChild(imageHolder);
+
+    divTest1.appendChild(titleSpan);
+    divTest1.appendChild(descriptionSpan);
+    divTest1.appendChild(resultsBtn);
 
     var resultsBtn2= document.createElement("a");
     resultsBtn2.setAttribute("target", "_blank")
@@ -103,9 +116,9 @@ var eventRandom = shuffle(data.events_results);
     var descriptionSpan2 = document.createElement("div");
     descriptionSpan2.textContent = eventRandom[2].description;
 
-    divTest.appendChild(titleSpan2);
-    divTest.appendChild(descriptionSpan2);
-    divTest.appendChild(resultsBtn2);
+    divTest2.appendChild(titleSpan2);
+    divTest2.appendChild(descriptionSpan2);
+    divTest2.appendChild(resultsBtn2);
 
    
     var resultsBtn3= document.createElement("a");
@@ -119,9 +132,9 @@ var eventRandom = shuffle(data.events_results);
     var descriptionSpan3 = document.createElement("div");
     descriptionSpan3.textContent = eventRandom[3].description;
 
-    divTest.appendChild(titleSpan3);
-    divTest.appendChild(descriptionSpan3);
-    divTest.appendChild(resultsBtn3);
+    divTest3.appendChild(titleSpan3);
+    divTest3.appendChild(descriptionSpan3);
+    divTest3.appendChild(resultsBtn3);
 
     var resultsBtn4= document.createElement("a");
     resultsBtn4.setAttribute("target", "_blank")
@@ -134,9 +147,9 @@ var eventRandom = shuffle(data.events_results);
     var descriptionSpan4 = document.createElement("div");
     descriptionSpan4.textContent = eventRandom[4].description;
 
-    divTest.appendChild(titleSpan4);
-    divTest.appendChild(descriptionSpan4);
-    divTest.appendChild(resultsBtn4);
+    divTest4.appendChild(titleSpan4);
+    divTest4.appendChild(descriptionSpan4);
+    divTest4.appendChild(resultsBtn4);
 
     var resultsBtn5= document.createElement("a");
     resultsBtn5.setAttribute("target", "_blank")
@@ -149,9 +162,9 @@ var eventRandom = shuffle(data.events_results);
     var descriptionSpan5 = document.createElement("div");
     descriptionSpan5.textContent = eventRandom[5].description;
 
-    divTest.appendChild(titleSpan5);
-    divTest.appendChild(descriptionSpan5);
-    divTest.appendChild(resultsBtn5);
+    divTest5.appendChild(titleSpan5);
+    divTest5.appendChild(descriptionSpan5);
+    divTest5.appendChild(resultsBtn5);
 
     var resultsBtn6= document.createElement("a");
     resultsBtn6.setAttribute("target", "_blank")
@@ -164,9 +177,9 @@ var eventRandom = shuffle(data.events_results);
     var descriptionSpan6 = document.createElement("div");
     descriptionSpan6.textContent = eventRandom[6].description;
 
-    divTest.appendChild(titleSpan6);
-    divTest.appendChild(descriptionSpan6);
-    divTest.appendChild(resultsBtn6);
+    divTest6.appendChild(titleSpan6);
+    divTest6.appendChild(descriptionSpan6);
+    divTest6.appendChild(resultsBtn6);
 
 
 
@@ -193,17 +206,16 @@ var fortuneLoop = function(data) {
     var fortune = data.cookie.fortune;
     var luckNumber = data.cookie.luckyNumbers;
 
-var fortuneTeller = document.createElement("span")
+var fortuneTeller = document.createElement("div")
 fortuneTeller.textContent = fortune;
 fortuneEl.append(fortuneTeller);
 
-    for (var i = 0; i < luckNumber.length; i++) {
-        console.log(luckNumber[i]);
+    
 // this append should be set to the correct div we want this information to show up. Most likely best to show up outside of hidden div.
         var fortuneDescription = document.createElement("div")
-        fortuneDescription.textContent = luckNumber[i];
+        fortuneDescription.textContent = luckNumber;
         fortuneEl.append(fortuneDescription);
-}
+
 
 };
 
