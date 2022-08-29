@@ -312,26 +312,6 @@ var idElement = event
 // Initial date/ city/ state submite form handler
 cityGet.addEventListener("submit", formSubmit)
 
-<<<<<<< HEAD
-}
-//  var routePlan = function(long, lat, long2, lat2) {
-//         var routeApi = "https://api.geoapify.com/v1/routing?waypoints=" + long + "," + lat + "|" + long2 + "," + lat2 + "&mode=drive&apiKey=" + paulApiKey + "";
-//         fetch(routeApi)
-//             .then(function (res) {
-//                 return res.json();
-//             })
-//             .then(function (data) {
-//                 console.log(data);
-//                 getCord(data)
-//             })
-// };
-
-cityGet.addEventListener("submit", formSubmit);
-
-// Google Calendar
-
-
-=======
 // Once they submit themselves to an adventure. this event listener will populate the ID to the
 // adventureSelected function that will run the unhideclass within the Id of that clicked element, and run the fortunefun Function.
 // we probably will need to create 5 other event listeners to be linked to a hidden div within the pages that will load the content once they chose their city etc.
@@ -340,4 +320,4 @@ adventureSubmit.addEventListener("click", (event) => {
         console.log(event.target.id);
         adventureSelected(event.target.id)
 })
->>>>>>> develop
+
