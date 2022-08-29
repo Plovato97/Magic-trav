@@ -11,6 +11,23 @@ var adventureSubmit = document.querySelector("#adventureSubmit")
 
 
 
+// (function() {
+//     var cors_api_host = 'cors-anywhere.herokuapp.com';
+//     var cors_api_url = 'https://' + cors_api_host + '/';
+//     var slice = [].slice;
+//     var origin = window.location.protocol + '//' + window.location.host;
+//     var open = XMLHttpRequest.prototype.open;
+//     XMLHttpRequest.prototype.open = function() {
+//         var args = slice.call(arguments);
+//         var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+//         if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+//             targetOrigin[1] !== cors_api_host) {
+//             args[1] = cors_api_url + args[1];
+//         }
+//         return open.apply(this, args);
+//     };
+// })();
+
 // uses the submit form eleement to gather the date/city/state paremeters to be used on other functions
 var formSubmit = function(event) {
     event.preventDefault();
@@ -85,10 +102,14 @@ var eventRandom = shuffle(data.events_results);
     var titleSpan = document.createElement("div");
     titleSpan.textContent = eventRandom[1].title;
 
+    var timeDiv = document.createElement("h2")
+    timeDiv.textContent = eventRandom[1].date.when;
+
     var descriptionSpan = document.createElement("div");
     descriptionSpan.textContent = eventRandom[1].description;
 
     divTest.appendChild(titleSpan);
+    divTest.appendChild(timeDiv);
     divTest.appendChild(descriptionSpan);
     divTest.appendChild(resultsBtn);
 
