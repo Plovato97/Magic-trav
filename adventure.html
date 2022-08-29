@@ -1,16 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css">
+        <title>Magic Traveler 🧙</title>
+    </head>
 <body>
-    <form id="user-form" action="./journeys.html" method="POST">
-        <input type="date" id="dateInput">
-        <input type="text" id="cityInput">
-        <select id="statesSelect" >
+ <!-- Navigation -->
+ <div class="header header-fixed u-unselectable header-animated">
+    <div class="header-brand">
+            <div class="nav-item no-hover">
+                <a>
+                   <h6 class="title">Magic Traveler 🧙</h6>
+                </a>
+            </div>
+        </div>
+                <div class="header-nav nav-right" id="header-menu">
+                    <div class="nav-item has-sub toggle-hover" id="dropdown">
+                        <a class="nav-dropdown-link">Journey's Await</a>
+                             <ul class="dropdown-menu dropdown-animated" role="menu">
+                                <li role="menu-item"><a href="index.html"> Homepage</a></li>
+                                <li role="menu-item"><a href="#">Past journeys</a></li>
+                            </ul>
+                     </div>
+                 </div>
+    <!--Navagation End-->
+   </div>
+
+   <!--Hero-->
+   <div class="container u-center u-relative">
+   <img class="img-contain" src="./assets/images/hero.jpeg">
+
+   </div>
+
+   <!--Fortune-->
+
+    <a class="btn" id="adventureSubmit" href="">Show Your Fortune</a>    
+    <section id="fortuneTest">
+
+    </section>
+
+
+   <!--Main Form-->
+    <form class= "form-group" id="user-form" action="./journeys.html" method="POST">
+        <label class="form-group-label">Date:</label>
+        <input type="date" class="form-group-input" id="dateInput">
+        <label class="form-group-label">Destination:</label>
+        <input type="text" class="form-group-input" placeholder="City" id="cityInput">
+        <select class="form-group-input w-100p" id="statesSelect" >
             <option value="AL">AL</option>
             <option value="AK">AK</option>
             <option value="AR">AR</option>
@@ -64,14 +106,83 @@
             <option value="WY">WY</option>
         </select>
 
-        <button id="btn-main" type="submit" > Click me!</button>
-
-        <section id="fortuneTest"></section>
+        <button id="btn-main" type="submit">Submit</button>
     </form>  
-    <div id="testLinks">
+<!--Form End-->
+
+<!--Card Start-->
+<div class= "grid grid-cols-3 u-gap-2" >
+
+<!--Card 1-->
+<div id="cardE1" class="card h-100p u-flex u-flex-column card--slide-up">
+    <div class="card__container">
+    <div class="card__image" id="imgE1">
+
+    </div>
     </div>
 
-    <a id="adventureSubmit" href="">Link</a>
-        <script src="./assets/js/adventure.js"></script>
+</div>
+
+<!--Card 2-->
+<div id="cardE2" class="card h-100p u-flex u-flex-column card--slide-up">
+    <div class="card__container">
+        <div class="card__image" id="imgE2">
+    
+        </div>
+        </div>
+
+</div>
+
+<!--Card 3-->
+<div id="cardE3" class="card h-100p u-flex u-flex-column card--slide-up">
+    <div class="card__container">
+        <div class="card__image" id="imgE3">
+    
+        </div>
+        </div>
+
+</div>
+
+<!--Card 4-->
+<div id="cardE4" class="card h-100p u-flex u-flex-column card--slide-up">
+    <div class="card__container">
+        <div class="card__image" id="imgE4">
+    
+        </div>
+        </div>
+
+</div>
+<!--Card 5-->
+<div id="cardE5" class="card h-100p u-flex u-flex-column card--slide-up">
+    <div class="card__container">
+        <div class="card__image" id="imgE5">
+    
+        </div>
+        </div>
+
+</div>
+
+<!--Card 6-->
+<div id="cardE6" class="card h-100p u-flex u-flex-column card--slide-up">
+    <div class="card__container">
+        <div class="card__image" id="imgE6">
+    
+        </div>
+        </div>
+
+</div>
+
+<!--END CARDS-->
+
+</div>
+
+<footer class="footer">
+
+</footer>
+
+
+
+<script src="assets/js/adventure.js"></script>
+
 </body>
 </html>
