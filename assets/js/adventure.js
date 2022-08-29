@@ -92,6 +92,9 @@ var eventRandom = shuffle(data.events_results);
     var titleSpan = document.createElement("div");
     titleSpan.classList.add("card__mobile-title")
     titleSpan.textContent = eventRandom[1].title;
+    
+    var timeDiv = document.createElement("h4")
+    timeDiv.textContent = eventRandom[1].date.when;
 
     var descriptionSpan = document.createElement("div");
     descriptionSpan.classList.add("card__body");
@@ -105,6 +108,7 @@ var eventRandom = shuffle(data.events_results);
     src.appendChild(imageHolder);
 
     divTest1.appendChild(titleSpan);
+    titleSpan.appendChild(timeDiv);
     divTest1.appendChild(descriptionSpan);
     divTest1.appendChild(resultsBtn);
 
@@ -119,6 +123,9 @@ var eventRandom = shuffle(data.events_results);
     titleSpan2.classList.add("card__mobile-title")
     titleSpan2.textContent = eventRandom[2].title;
 
+    var timeDiv = document.createElement("h4")
+    timeDiv.textContent = eventRandom[2].date.when;
+
     var descriptionSpan2 = document.createElement("div");
     descriptionSpan2.classList.add("card__body");
     descriptionSpan2.textContent = eventRandom[2].description;
@@ -130,6 +137,7 @@ var eventRandom = shuffle(data.events_results);
      src.appendChild(imageHolder);
 
     divTest2.appendChild(titleSpan2);
+    titleSpan2.appendChild(timeDiv);
     divTest2.appendChild(descriptionSpan2);
     divTest2.appendChild(resultsBtn2);
 
@@ -147,6 +155,9 @@ var eventRandom = shuffle(data.events_results);
     titleSpan3.classList.add("card__mobile-title")
     titleSpan3.textContent = eventRandom[3].title;
 
+    var timeDiv = document.createElement("h4")
+    timeDiv.textContent = eventRandom[3].date.when;
+
     var descriptionSpan3 = document.createElement("div");
     descriptionSpan3.classList.add("card__body");
     descriptionSpan3.textContent = eventRandom[3].description;
@@ -159,6 +170,7 @@ var eventRandom = shuffle(data.events_results);
     
 
     divTest3.appendChild(titleSpan3);
+    titleSpan3.appendChild(timeDiv);
     divTest3.appendChild(descriptionSpan3);
     divTest3.appendChild(resultsBtn3);
 
@@ -173,6 +185,9 @@ var eventRandom = shuffle(data.events_results);
     titleSpan4.classList.add("card__mobile-title")
     titleSpan4.textContent = eventRandom[4].title;
 
+    var timeDiv = document.createElement("h2")
+    timeDiv.textContent = eventRandom[4].date.when;
+
     var descriptionSpan4 = document.createElement("div");
     descriptionSpan4.classList.add("card__body");
     descriptionSpan4.textContent = eventRandom[4].description;
@@ -184,6 +199,7 @@ var eventRandom = shuffle(data.events_results);
      src.appendChild(imageHolder);
 
     divTest4.appendChild(titleSpan4);
+    titleSpan4.appendChild(timeDiv);
     divTest4.appendChild(descriptionSpan4);
     divTest4.appendChild(resultsBtn4);
 
@@ -198,6 +214,9 @@ var eventRandom = shuffle(data.events_results);
     titleSpan5.classList.add("card__mobile-title")
     titleSpan5.textContent = eventRandom[5].title;
 
+    var timeDiv = document.createElement("h4")
+    timeDiv.textContent = eventRandom[5].date.when;
+
     var descriptionSpan5 = document.createElement("div");
     descriptionSpan5.classList.add("card__body");
     descriptionSpan5.textContent = eventRandom[5].description;
@@ -209,6 +228,7 @@ var eventRandom = shuffle(data.events_results);
      src.appendChild(imageHolder);
 
     divTest5.appendChild(titleSpan5);
+    titleSpan5.appendChild(timeDiv);
     divTest5.appendChild(descriptionSpan5);
     divTest5.appendChild(resultsBtn5);
 
@@ -223,6 +243,9 @@ var eventRandom = shuffle(data.events_results);
     titleSpan6.classList.add("card__mobile-title")
     titleSpan6.textContent = eventRandom[6].title;
 
+    var timeDiv = document.createElement("h4")
+    timeDiv.textContent = eventRandom[6].date.when;
+
     var descriptionSpan6 = document.createElement("div");
     descriptionSpan6.classList.add("card__body");
     descriptionSpan6.textContent = eventRandom[6].description;
@@ -234,6 +257,7 @@ var eventRandom = shuffle(data.events_results);
      src.appendChild(imageHolder);
 
     divTest6.appendChild(titleSpan6);
+    titleSpan6.appendChild(timeDiv);
     divTest6.appendChild(descriptionSpan6);
     divTest6.appendChild(resultsBtn6);
 
