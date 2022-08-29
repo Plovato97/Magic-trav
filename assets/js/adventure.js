@@ -75,8 +75,6 @@ function shuffle(array) {
     then the class will change and revela the generated content within that specific div */
 var eventsLoop = function(data) {
 
-
-    
 var eventRandom = shuffle(data.events_results);
 
     var resultsBtn= document.createElement("a");
@@ -213,7 +211,6 @@ fortuneEl.append(fortuneTeller);
 var adventureSelected = function(event) {
 var idElement = event
     console.log(event);
-
 
     // add class element that makes the div reveal the context once this function is ran. 
     // idElement.setClass.add("unhide")
