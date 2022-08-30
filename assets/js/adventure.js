@@ -261,8 +261,12 @@ var eventRandom = shuffle(data.events_results);
     divTest6.appendChild(descriptionSpan6);
     divTest6.appendChild(resultsBtn6);
 
-
-
+    saveLocalStorage(eventRandom);
+    var saveLocalStorage = function (array) {
+        eventsArray = JSON.parse(localStorage.getItem(cityInput)) || [];
+        eventsArray.push(array);
+        localStorage.setItem("cityInput", JSON.stringify(eventsArray));
+      };
 };
 
 /* we need to create an event handler that will populate this api within the same div. or somewhere within the page
@@ -320,4 +324,3 @@ adventureSubmit.addEventListener("click", (event) => {
         console.log(event.target.id);
         adventureSelected(event.target.id)
 })
-
