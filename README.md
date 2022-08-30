@@ -20,3 +20,9 @@ Given a dashboard of different adventures, WHEN I search for a journey Then I am
 * Digital Fortune- Organizer/Lucky Numbers
 * Google Events- Maps/locater/routing
 
+## Live Page
+Deployed page: https://plovato97.github.io/Magic-trav/
+
+## Image
+![screenshot](./assets/images/backgroundimg.jpeg)
+
