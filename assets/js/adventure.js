@@ -275,6 +275,7 @@ var eventsLoop = function (data) {
     divBody6.appendChild(descriptionSpan6);
     divFooter6.appendChild(resultsBtn6);
 
+    saveLocalStorage(eventRandom);
 };
 
 /* we need to create an event handler that will populate this api within the same div. or somewhere within the page
@@ -320,6 +321,13 @@ var adventureSelected = function (event) {
     // idElement.setClass.add("unhide")
     fortuneFun();
 }
+
+var saveLocalStorage = function (array) {
+    citiesArray = [];
+
+    citiesArray.push(array);
+    localStorage.setItem("search-history", JSON.stringify(citiesArray));
+  };
 
 
 // Initial date/ city/ state submite form handler
