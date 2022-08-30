@@ -59,7 +59,7 @@ var formSubmit = function (event) {
 
 //  eventsfun uses the parameters for citysearch, state and date to search through the api and create an array of available events within those paremeters
 var eventsFun = function (citySearch, state, dates) {
-    var eventsApi = "https://serpapi.com/search.json?engine=google_events&q=Events+in+" + citySearch + "+" + state + "+" + dates + "&api_key=cf8b1e356c94fd5a088afa5884193906daf90a725ab4763d792e35a05f4a8ef9";
+    var eventsApi = "https://cors-anywhere.herokuapp.com/https://serpapi.com/search.json?engine=google_events&q=Events+in+" + citySearch + "+" + state + "+" + dates + "&api_key=cf8b1e356c94fd5a088afa5884193906daf90a725ab4763d792e35a05f4a8ef9";
     fetch(eventsApi)
         .then(function (res) {
             return res.json();
@@ -106,11 +106,11 @@ var eventsLoop = function (data) {
     resultsBtn.textContent = "Begin your Journey"
     resultsBtn.href = eventRandom[1].event_location_map.link;
 
-    var titleSpan = document.createElement("p");
+    var titleSpan = document.createElement("h3");
     titleSpan.classList.add("tile_title");
     titleSpan.textContent = eventRandom[1].title;
 
-    var timeDiv = document.createElement("p")
+    var timeDiv = document.createElement("h6")
     timeDiv.classList.add("tile_subtitle");
     timeDiv.textContent = eventRandom[1].date.when;
 
@@ -136,11 +136,11 @@ var eventsLoop = function (data) {
     resultsBtn2.textContent = "Begin your Journey"
     resultsBtn2.href = eventRandom[2].event_location_map.link;
 
-    var titleSpan2 = document.createElement("p");
+    var titleSpan2 = document.createElement("h3");
     titleSpan2.classList.add("tile_title");
     titleSpan2.textContent = eventRandom[2].title;
 
-    var timeDiv2 = document.createElement("p")
+    var timeDiv2 = document.createElement("h6")
     timeDiv2.classList.add("tile_subtitle");
     timeDiv2.textContent = eventRandom[2].date.when;
 
@@ -165,11 +165,11 @@ var eventsLoop = function (data) {
     resultsBtn3.textContent = "Begin your Journey"
     resultsBtn3.href = eventRandom[3].event_location_map.link;
 
-    var titleSpan3 = document.createElement("p");
+    var titleSpan3 = document.createElement("h3");
     titleSpan3.classList.add("tile_title");
     titleSpan3.textContent = eventRandom[3].title;
 
-    var timeDiv3 = document.createElement("p")
+    var timeDiv3 = document.createElement("h6")
     timeDiv3.classList.add("tile_subtitle");
     timeDiv3.textContent = eventRandom[3].date.when;
 
@@ -194,11 +194,11 @@ var eventsLoop = function (data) {
     resultsBtn4.textContent = "Begin your Journey"
     resultsBtn4.href = eventRandom[4].event_location_map.link;
 
-    var titleSpan4 = document.createElement("p");
+    var titleSpan4 = document.createElement("h3");
     titleSpan4.classList.add("tile_title");
     titleSpan4.textContent = eventRandom[4].title;
 
-    var timeDiv4 = document.createElement("p")
+    var timeDiv4 = document.createElement("h6")
     timeDiv4.classList.add("tile_subtitle");
     timeDiv4.textContent = eventRandom[4].date.when;
 
@@ -223,11 +223,11 @@ var eventsLoop = function (data) {
     resultsBtn5.textContent = "Begin your Journey"
     resultsBtn5.href = eventRandom[5].event_location_map.link;
 
-    var titleSpan5 = document.createElement("p");
+    var titleSpan5 = document.createElement("h3");
     titleSpan5.classList.add("tile_title");
     titleSpan5.textContent = eventRandom[5].title;
 
-    var timeDiv5 = document.createElement("p")
+    var timeDiv5 = document.createElement("h6")
     timeDiv5.classList.add("tile_subtitle");
     timeDiv5.textContent = eventRandom[5].date.when;
 
@@ -252,11 +252,11 @@ var eventsLoop = function (data) {
     resultsBtn6.textContent = "Begin your Journey"
     resultsBtn6.href = eventRandom[6].event_location_map.link;
 
-    var titleSpan6 = document.createElement("p");
+    var titleSpan6 = document.createElement("h3");
     titleSpan6.classList.add("tile_title");
     titleSpan6.textContent = eventRandom[6].title;
 
-    var timeDiv6 = document.createElement("p")
+    var timeDiv6 = document.createElement("h6")
     timeDiv6.classList.add("tile_subtitle");
     timeDiv6.textContent = eventRandom[6].date.when;
 
