@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css">
-        <title>Magic Traveler 🧙</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui/dist/cirrus.min.css">
+    <title>Magic Traveler 🧙</title>
+</head>
+
 <body>
- <!-- Navigation -->
- <div class="header header-fixed u-unselectable header-animated">
-    <div class="header-brand">
+    <!-- Navigation -->
+    <div class="header header-fixed u-unselectable header-animated">
+        <div class="header-brand">
             <div class="nav-item no-hover">
                 <a>
-                   <h6 class="title">Magic Traveler 🧙</h6>
+                    <h6 class="title">Magic Traveler 🧙</h6>
                 </a>
             </div>
         </div>
-                <div class="header-nav nav-right" id="header-menu">
-                    <div class="nav-item has-sub toggle-hover" id="dropdown">
-                        <a class="nav-dropdown-link">Journey's Await</a>
-                             <ul class="dropdown-menu dropdown-animated" role="menu">
-                                <li role="menu-item"><a href="index.html"> Homepage</a></li>
-                                <li role="menu-item"><a href="#">Past journeys</a></li>
-                            </ul>
-                     </div>
-                 </div>
-    <!--Navagation End-->
-   </div>
+        <div class="nav-center ">
+            <div class="form-ext-control nav-item ">
+                <label class="form-ext-toggle__label"><span style="padding-right: 40px;">Dark Theme</span>
+                    <div class="form-ext-toggle form-ext-toggle--dark">
+                        <input name="toggleCheckbox-dark" type="checkbox" class="form-ext-input" />
+                        <div class="form-ext-toggle__toggler"><i></i></div>
+                    </div>
+                </label>
+            </div>
 
-   <!--Hero-->
-   <div class="container u-center u-relative">
-   <img class="img-contain" src="./assets/images/hero.jpeg">
+        </div>
+        <div class="header-nav nav-right" id="header-menu">
+            <div class="nav-item has-sub toggle-hover" id="dropdown">
+                <a class="nav-dropdown-link">Journey's Await</a>
+                <ul class="dropdown-menu dropdown-animated" role="menu">
+                    <li role="menu-item"><a href="index.html"> Homepage</a></li>
+                    <li role="menu-item"><a href="#">Past journeys</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--Navagation End-->
+    </div>
 
-   </div>
+    <!--Hero-->
+    <div class="container u-center u-relative">
+        <img class="img-contain" src="./assets/images/hero.jpeg">
 
-   <!--Fortune-->
+    </div>
 
-    <a class="btn u-center u-relative" id="adventureSubmit" href="">Show Your Fortune</a>    
+    <!--Fortune-->
+
+    <a class="btn u-center u-relative" id="adventureSubmit" href="">Show Your Fortune</a>
     <section id="fortuneTest">
 
     </section>
 
 
-   <!--Main Form-->
+    <!--Main Form-->
 
-    <form class= "form-group row level" id="user-form" action="./journeys.html" method="POST">
+    <form class="form-group row level" id="user-form" action="./journeys.html" method="POST">
         <label class="form-group-label ">Date:</label>
         <input type="date" class="form-group-input" id="dateInput">
         <label class="form-group-label">Destination:</label>
         <input type="text" class="form-group-input " placeholder="City" id="cityInput">
-        <select class="form-group-input w-100p" id="statesSelect" >
+        <select class="form-group-input w-100p" id="statesSelect">
             <option value="AL">AL</option>
             <option value="AK">AK</option>
             <option value="AR">AR</option>
@@ -108,82 +121,161 @@
         </select>
 
         <button id="btn-main" type="submit">Submit</button>
-    </form>  
-<!--Form End-->
+    </form>
+    <!--Form End-->
 
-<!--Card Start-->
-<div class= "grid grid-cols-3 u-gap-2" >
+    <!--Card Start-->
+    <div class="row ">
 
-<!--Card 1-->
-<div id="cardE1" class="card h-100p u-flex u-flex-column card--slide-up">
-    <div class="card__container">
-    <div class="card__image" id="imgE1">
+        <!--Card 1-->
+        <div class="col-4">
+            <div id="card1" class="card card--slide-up">
+                <div class="card__container">
+                    <div class="card__image"
+                        style="background-image: url(/assets/images/space_dude.png);"></div>
+                </div>
+                <div class="card__mobile-title">
+                    <div class="content">
+                        <div class="tile">
+                            <div id='cardContent1' class="tile__container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="card1body" class="card__body content">
+                </div>
+                <div id="card1footer" class="card__footer content"></div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-4">
+            <div id="card2" class="card card--slide-up">
+                <div class="card__container">
+                    <div class="card__image"
+                        style="background-image: url(/assets/images/space_dude.png);"></div>
+                </div>
+                <div class="card__mobile-title">
+                    <div class="content">
+                        <div class="tile">
+                            <div id='cardContent2' class="tile__container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="card2body" class="card__body content">
+                </div>
+                <div id="card2footer" class="card__footer content"></div>
+            </div>
+        </div>
+
+
+        <!-- Card 3 -->
+        <div class="col-4">
+            <div id="card3" class="card card--slide-up">
+                <div class="card__container">
+                    <div class="card__image"
+                        style="background-image: url(/assets/images/space_dude.png);"></div>
+                </div>
+                <div class="card__mobile-title">
+                    <div class="content">
+                        <div class="tile">
+                            <div id='cardContent3' class="tile__container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="card3body" class="card__body content">
+                </div>
+                <div id="card3footer" class="card__footer content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--Card 4-->
+    <div class="row">
+        <div class="col-4">
+            <div id="card4" class="card card--slide-up">
+                <div class="card__container">
+                    <div class="card__image"
+                        style="background-image: url(/assets/images/space_dude.png);
+                        background-size:100px 50px auto ;"></div>
+                </div>
+                <div class="card__mobile-title">
+                    <div class="content">
+                        <div class="tile">
+                            <div id='cardContent4' class="tile__container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="card4body" class="card__body content">
+                </div>
+                <div id="card4footer" class="card__footer content"></div>
+            </div>
+        </div>
+
+        <!--Card 5-->
+        <div class="col-4">
+            <div id="card5" class="card card--slide-up">
+                <div class="card__container">
+                    <div class="card__image"
+                        style="background-image: url(/assets/images/space_dude.png);"></div>
+                </div>
+                <div class="card__mobile-title">
+                    <div class="content">
+                        <div class="tile">
+                            <div id='cardContent5' class="tile__container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="card5body" class="card__body content">
+                </div>
+                <div id="card5footer" class="card__footer content"></div>
+            </div>
+        </div>
+
+        <!--Card 6-->
+        <div class="col-4">
+            <div id="card6" class="card card--slide-up">
+                <div class="card__container">
+                    <div class="card__image"
+                        style="background-image: url(/assets/images/space_dude.png)"></div>
+                </div>
+                <div class="card__mobile-title">
+                    <div class="content">
+                        <div class="tile">
+                            <div id='cardContent6' class="tile__container">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="card6body" class="card__body content">
+                </div>
+                <div id="card6footer" class="card__footer content"></div>
+            </div>
+        </div>
 
     </div>
+    <!--END CARDS-->
+
     </div>
 
-</div>
+    <footer class="footer">
 
-<!--Card 2-->
-<div id="cardE2" class="card h-100p u-flex u-flex-column card--slide-up">
-    <div class="card__container">
-        <div class="card__image" id="imgE2">
-    
-        </div>
-        </div>
-
-</div>
-
-<!--Card 3-->
-<div id="cardE3" class="card h-100p u-flex u-flex-column card--slide-up">
-    <div class="card__container">
-        <div class="card__image" id="imgE3">
-    
-        </div>
-        </div>
-
-</div>
-
-<!--Card 4-->
-<div id="cardE4" class="card h-100p u-flex u-flex-column card--slide-up">
-    <div class="card__container">
-        <div class="card__image" id="imgE4">
-    
-        </div>
-        </div>
-
-</div>
-<!--Card 5-->
-<div id="cardE5" class="card h-100p u-flex u-flex-column card--slide-up">
-    <div class="card__container">
-        <div class="card__image" id="imgE5">
-    
-        </div>
-        </div>
-
-</div>
-
-<!--Card 6-->
-<div id="cardE6" class="card h-100p u-flex u-flex-column card--slide-up">
-    <div class="card__container">
-        <div class="card__image" id="imgE6">
-    
-        </div>
-        </div>
-
-</div>
-
-<!--END CARDS-->
-
-</div>
-
-<footer class="footer">
-
-</footer>
+    </footer>
 
 
 
-<script src="assets/js/adventure.js"></script>
+    <script src="assets/js/adventure.js"></script>
 
 </body>
+
 </html>
