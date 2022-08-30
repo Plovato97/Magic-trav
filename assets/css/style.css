@@ -98,6 +98,10 @@ body {
     border-radius: 10px;
 }
 
+.error {
+    color: red;
+};
+
 @keyframes glowing {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }

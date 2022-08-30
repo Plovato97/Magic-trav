@@ -5,6 +5,8 @@ var cityGet = document.querySelector("#user-form")
 var inputEl = document.querySelector("#cityInput")
 var dateEl = document.querySelector("#dateInput")
 var statesEl = document.querySelector("#statesSelect")
+var errorEl = document.querySelector("#alert")
+
 var divTest1 = document.querySelector("#cardE1")
 var divTest2 = document.querySelector("#cardE2")
 var divTest3 = document.querySelector("#cardE3")
@@ -48,12 +50,13 @@ var formSubmit = function(event) {
         inputEl.value = "";
         dateEl.value = "";
         statesEl.value = "";
+        document.getElementById("alert").innerHTML = '';
     } else if (cityName) {
-        alert("Please Select a date")
+        document.getElementById("alert").innerHTML = "<h4 style='color: red;'>Please select a Date</h4>";
     } else if (cityDate) {
-        alert ("please select a City")
+        document.getElementById("alert").innerHTML = "<h4 style='color: red;'>Please select a City</h4>";
     } else {
-        alert ("Please submit a correct City, State and Date")
+        document.getElementById("alert").innerHTML = "<h4 style='color: red;'>Please submit a correct City, State and Date</h4>"; 
     }
     console.log(event);
 };
