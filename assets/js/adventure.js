@@ -5,6 +5,8 @@ var cityGet = document.querySelector("#user-form")
 var inputEl = document.querySelector("#cityInput")
 var dateEl = document.querySelector("#dateInput")
 var statesEl = document.querySelector("#statesSelect")
+var errorEl = document.querySelector("#alert")
+
 var divTest1 = document.querySelector("#cardE1")
 var divTest2 = document.querySelector("#cardE2")
 var divTest3 = document.querySelector("#cardE3")
@@ -14,24 +16,6 @@ var divTest6 = document.querySelector("#cardE6")
 var fortuneEl = document.querySelector("#fortuneTest")
 var adventureSubmit = document.querySelector("#adventureSubmit")
 
-
-
-// (function() {
-//     var cors_api_host = 'cors-anywhere.herokuapp.com';
-//     var cors_api_url = 'https://' + cors_api_host + '/';
-//     var slice = [].slice;
-//     var origin = window.location.protocol + '//' + window.location.host;
-//     var open = XMLHttpRequest.prototype.open;
-//     XMLHttpRequest.prototype.open = function() {
-//         var args = slice.call(arguments);
-//         var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-//         if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-//             targetOrigin[1] !== cors_api_host) {
-//             args[1] = cors_api_url + args[1];
-//         }
-//         return open.apply(this, args);
-//     };
-// })();
 
 // uses the submit form eleement to gather the date/city/state paremeters to be used on other functions
 var formSubmit = function(event) {
@@ -48,12 +32,13 @@ var formSubmit = function(event) {
         inputEl.value = "";
         dateEl.value = "";
         statesEl.value = "";
+        document.getElementById("alert").innerHTML = '';
     } else if (cityName) {
-        alert("Please Select a date")
+        document.getElementById("alert").innerHTML = "<h4 style='color: red;'>Please select a Date</h4>";
     } else if (cityDate) {
-        alert ("please select a City")
+        document.getElementById("alert").innerHTML = "<h4 style='color: red;'>Please select a City</h4>";
     } else {
-        alert ("Please submit a correct City, State and Date")
+        document.getElementById("alert").innerHTML = "<h4 style='color: red;'>Please submit a correct City, State and Date</h4>"; 
     }
     console.log(event);
 };
@@ -106,14 +91,11 @@ var eventRandom = shuffle(data.events_results);
     resultsBtn.textContent = "Begin your Journey"
     resultsBtn.href = eventRandom[1].event_location_map.link;
 
-    var titleSpan = document.createElement("div");
+    var titleSpan = document.createElement("h3");
     titleSpan.classList.add("card__mobile-title")
     titleSpan.textContent = eventRandom[1].title;
     
-    var timeDiv = document.createElement("h4")
-    timeDiv.textContent = eventRandom[1].date.when;
-
-    var timeDiv = document.createElement("h2")
+    var timeDiv = document.createElement("h6")
     timeDiv.textContent = eventRandom[1].date.when;
 
     var descriptionSpan = document.createElement("div");
@@ -130,12 +112,7 @@ var eventRandom = shuffle(data.events_results);
     var imageHolder = document.createElement("img");
     imageHolder.src = "assets/images/placeholder.png";
     var src = document.getElementById("imgE1");
-    src.appendChild(imageHolder);
-
-    divTest1.appendChild(titleSpan);
-    titleSpan.appendChild(timeDiv);
-    divTest1.appendChild(descriptionSpan);
-    divTest1.appendChild(resultsBtn);
+    divTest1.appendChild(imageHolder);
 
 
 /* CARD 2 */
@@ -144,12 +121,12 @@ var eventRandom = shuffle(data.events_results);
     resultsBtn2.textContent = "Begin your Journey"
     resultsBtn2.href = eventRandom[2].event_location_map.link;
 
-    var titleSpan2 = document.createElement("div");
+    var titleSpan2 = document.createElement("h3");
     titleSpan2.classList.add("card__mobile-title")
     titleSpan2.textContent = eventRandom[2].title;
 
-    var timeDiv = document.createElement("h4")
-    timeDiv.textContent = eventRandom[2].date.when;
+    var timeDiv2 = document.createElement("h6")
+    timeDiv2.textContent = eventRandom[2].date.when;
 
     var descriptionSpan2 = document.createElement("div");
     descriptionSpan2.classList.add("card__body");
@@ -162,7 +139,7 @@ var eventRandom = shuffle(data.events_results);
      src.appendChild(imageHolder);
 
     divTest2.appendChild(titleSpan2);
-    titleSpan2.appendChild(timeDiv);
+    titleSpan2.appendChild(timeDiv2);
     divTest2.appendChild(descriptionSpan2);
     divTest2.appendChild(resultsBtn2);
 
@@ -176,12 +153,12 @@ var eventRandom = shuffle(data.events_results);
     resultsBtn3.textContent = "Begin your Journey"
     resultsBtn3.href = eventRandom[3].event_location_map.link;
 
-    var titleSpan3 = document.createElement("div");
+    var titleSpan3 = document.createElement("h3");
     titleSpan3.classList.add("card__mobile-title")
     titleSpan3.textContent = eventRandom[3].title;
 
-    var timeDiv = document.createElement("h4")
-    timeDiv.textContent = eventRandom[3].date.when;
+    var timeDiv3 = document.createElement("h6")
+    timeDiv3.textContent = eventRandom[3].date.when;
 
     var descriptionSpan3 = document.createElement("div");
     descriptionSpan3.classList.add("card__body");
@@ -195,7 +172,7 @@ var eventRandom = shuffle(data.events_results);
     
 
     divTest3.appendChild(titleSpan3);
-    titleSpan3.appendChild(timeDiv);
+    titleSpan3.appendChild(timeDiv3);
     divTest3.appendChild(descriptionSpan3);
     divTest3.appendChild(resultsBtn3);
 
@@ -206,12 +183,12 @@ var eventRandom = shuffle(data.events_results);
     resultsBtn4.textContent = "Begin your Journey"
     resultsBtn4.href = eventRandom[4].event_location_map.link;
 
-    var titleSpan4 = document.createElement("div");
+    var titleSpan4 = document.createElement("h3");
     titleSpan4.classList.add("card__mobile-title")
     titleSpan4.textContent = eventRandom[4].title;
 
-    var timeDiv = document.createElement("h2")
-    timeDiv.textContent = eventRandom[4].date.when;
+    var timeDiv4 = document.createElement("h6")
+    timeDiv4.textContent = eventRandom[4].date.when;
 
     var descriptionSpan4 = document.createElement("div");
     descriptionSpan4.classList.add("card__body");
@@ -224,7 +201,7 @@ var eventRandom = shuffle(data.events_results);
      src.appendChild(imageHolder);
 
     divTest4.appendChild(titleSpan4);
-    titleSpan4.appendChild(timeDiv);
+    titleSpan4.appendChild(timeDiv4);
     divTest4.appendChild(descriptionSpan4);
     divTest4.appendChild(resultsBtn4);
 
@@ -235,12 +212,12 @@ var eventRandom = shuffle(data.events_results);
     resultsBtn5.textContent = "Begin your Journey"
     resultsBtn5.href = eventRandom[5].event_location_map.link;
 
-    var titleSpan5 = document.createElement("div");
+    var titleSpan5 = document.createElement("h3");
     titleSpan5.classList.add("card__mobile-title")
     titleSpan5.textContent = eventRandom[5].title;
 
-    var timeDiv = document.createElement("h4")
-    timeDiv.textContent = eventRandom[5].date.when;
+    var timeDiv5 = document.createElement("h6")
+    timeDiv5.textContent = eventRandom[5].date.when;
 
     var descriptionSpan5 = document.createElement("div");
     descriptionSpan5.classList.add("card__body");
@@ -253,7 +230,7 @@ var eventRandom = shuffle(data.events_results);
      src.appendChild(imageHolder);
 
     divTest5.appendChild(titleSpan5);
-    titleSpan5.appendChild(timeDiv);
+    titleSpan5.appendChild(timeDiv5);
     divTest5.appendChild(descriptionSpan5);
     divTest5.appendChild(resultsBtn5);
 
@@ -264,12 +241,12 @@ var eventRandom = shuffle(data.events_results);
     resultsBtn6.textContent = "Begin your Journey"
     resultsBtn6.href = eventRandom[6].event_location_map.link;
 
-    var titleSpan6 = document.createElement("div");
+    var titleSpan6 = document.createElement("h3");
     titleSpan6.classList.add("card__mobile-title")
     titleSpan6.textContent = eventRandom[6].title;
 
-    var timeDiv = document.createElement("h4")
-    timeDiv.textContent = eventRandom[6].date.when;
+    var timeDiv6 = document.createElement("h6")
+    timeDiv6.textContent = eventRandom[6].date.when;
 
     var descriptionSpan6 = document.createElement("div");
     descriptionSpan6.classList.add("card__body");
@@ -282,7 +259,7 @@ var eventRandom = shuffle(data.events_results);
      src.appendChild(imageHolder);
 
     divTest6.appendChild(titleSpan6);
-    titleSpan6.appendChild(timeDiv);
+    titleSpan6.appendChild(timeDiv6);
     divTest6.appendChild(descriptionSpan6);
     divTest6.appendChild(resultsBtn6);
 
@@ -337,27 +314,16 @@ var idElement = event
 
 
 var saveLocalStorage = function (array) {
-    eventsArray = JSON.parse(localStorage.getItem(cityInput)) || [];
+
+    cityName = array;
+    console.log(cityName); 
+
+    eventsArray = JSON.parse(localStorage.setItem()) || [];
     eventsArray.push(array);
-    localStorage.setItem("cityInput", JSON.stringify(eventsArray));
+    localStorage.setItem(array[0].address[1], JSON.stringify(eventsArray));
   };
   
-//   var loadPastEvents = function () {
-//     var pastEvents = JSON.parse(localStorage.getItem("city-input"));
-  
-//     pastEventContainerEl.textContent = "";
-  
-//     for (var i = 0; i < saveLocalStorage.length; i++) {
-//       var pastEventButtonEl = document.createElement("button");
-//       pastEventButtonEl.textContent = saveLocalStorage[i];
-//       pastEventButtonEl.setAttribute("data-search", saveLocalStorage[i]);
-//       pastEventButtonEl.setAttribute("class","pbtn btn-secondary btn-block p-2");
-//       pastEventButtonEl.setAttribute("type", "submit");
-//       pastEventButtonEl.setAttribute("id", "search-history-button");
-//       pastEventContainerEl.appendChild(searchHistoryButtonEl);
-//     }
-//   };
-  
+
 // Initial date/ city/ state submite form handler
 cityGet.addEventListener("submit", formSubmit)
 
