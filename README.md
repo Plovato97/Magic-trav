@@ -1,7 +1,7 @@
 # Magic Traveler
 ## About
 
-We are building Server-Side APIs from Digital Fortune and Google Events. When you Visit Magic Traveler you experience an adventure of a random place.
+We are building Server-Side APIs from Cirrus and Google Events. When you Visit Magic Traveler you experience an adventure of a random place.
 
 As A Hodophile I Want to explore new places so that I can find interesting facts to the journey.
 
@@ -17,7 +17,7 @@ Given a dashboard of different events, WHEN I search for a city, I will see para
 
 ### APIs
 
-* Digital Fortune- Organizer/Lucky Numbers
+* Cirrus- Organizer/Analytics
 * Google Events- Maps/locater/routing
 
 ## Live Page
