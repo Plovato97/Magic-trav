@@ -1,5 +1,5 @@
 var paulApiKey = "975536fb3351415c84e19797480ca9b3"
-var paulGoogleKey = "cf8b1e356c94fd5a088afa5884193906daf90a725ab4763d792e35a05f4a8ef9"
+var paulGoogleKey = "907ec1e8803cfbf3d22fe89f046820e63d79077da707c105cd43afe193c82645"
 
 var cityGet = document.querySelector("#user-form")
 var inputEl = document.querySelector("#cityInput")
@@ -323,6 +323,7 @@ var saveLocalStorage = function (array) {
     localStorage.setItem(array[0].address[1], JSON.stringify(eventsArray));
   };
   
+
 
 // Initial date/ city/ state submite form handler
 cityGet.addEventListener("submit", formSubmit)
