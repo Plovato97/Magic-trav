@@ -5,12 +5,16 @@ var cityGet = document.querySelector("#user-form")
 var inputEl = document.querySelector("#cityInput")
 var dateEl = document.querySelector("#dateInput")
 var statesEl = document.querySelector("#statesSelect")
+
+var errorEl = document.querySelector("#alert")
+
 var divTest1 = document.querySelector("#cardContent1")
 var divTest2 = document.querySelector("#cardContent2")
 var divTest3 = document.querySelector("#cardContent3")
 var divTest4 = document.querySelector("#cardContent4")
 var divTest5 = document.querySelector("#cardContent5")
 var divTest6 = document.querySelector("#cardContent6")
+
 var fortuneEl = document.querySelector("#fortuneTest")
 var divBody1 = document.querySelector("#card1body")
 var divBody2 = document.querySelector("#card2body")
@@ -31,7 +35,6 @@ var darktoggler = document.querySelector('#dark')
 
 
 
-
 // uses the submit form eleement to gather the date/city/state paremeters to be used on other functions
 var formSubmit = function (event) {
     event.preventDefault();
@@ -47,19 +50,19 @@ var formSubmit = function (event) {
         inputEl.value = "";
         dateEl.value = "";
         statesEl.value = "";
+        document.getElementById("alert").innerHTML = '';
     } else if (cityName) {
-        alert("Please Select a date")
+        document.getElementById("alert").innerHTML = "<h6 style='color: red;'>Please select a Date</h6>";
     } else if (cityDate) {
-        alert("please select a City")
+        document.getElementById("alert").innerHTML = "<h6 style='color: red;'>Please select a City</h6>";
     } else {
-        alert("Please submit a correct City, State and Date")
-    }
+
     console.log(event);
-};
+}};
 
 //  eventsfun uses the parameters for citysearch, state and date to search through the api and create an array of available events within those paremeters
 var eventsFun = function (citySearch, state, dates) {
-    var eventsApi = "https://cors-anywhere.herokuapp.com/https://serpapi.com/search.json?engine=google_events&q=Events+in+" + citySearch + "+" + state + "+" + dates + "&api_key=cf8b1e356c94fd5a088afa5884193906daf90a725ab4763d792e35a05f4a8ef9";
+    var eventsApi = "https://cors-anywhere.herokuapp.com/https://serpapi.com/search.json?engine=google_events&q=Events+in+" + citySearch + "+" + state + "+" + dates + "&api_key=907ec1e8803cfbf3d22fe89f046820e63d79077da707c105cd43afe193c82645";
     fetch(eventsApi)
         .then(function (res) {
             return res.json();
@@ -98,8 +101,6 @@ var eventsLoop = function (data) {
 
     var eventRandom = shuffle(data.events_results);
 
-
-
     /* Card ONE*/
     var resultsBtn = document.createElement("a");
     resultsBtn.setAttribute("target", "_blank")
@@ -107,16 +108,23 @@ var eventsLoop = function (data) {
     resultsBtn.href = eventRandom[1].event_location_map.link;
 
     var titleSpan = document.createElement("h3");
+
     titleSpan.classList.add("tile_title");
     titleSpan.textContent = eventRandom[1].title;
 
     var timeDiv = document.createElement("h6")
     timeDiv.classList.add("tile_subtitle");
+
     timeDiv.textContent = eventRandom[1].date.when;
 
     var descriptionSpan = document.createElement("p");
     descriptionSpan.textContent = eventRandom[1].description;
 
+
+    divTest1.appendChild(titleSpan);
+    divTest1.appendChild(timeDiv);
+    divTest1.appendChild(descriptionSpan);
+    divTest1.appendChild(resultsBtn);
 
     /* Code to add image to card 1*/
     // var imageHolder = document.createElement("div").classList.add;
@@ -171,6 +179,7 @@ var eventsLoop = function (data) {
 
     var timeDiv3 = document.createElement("h6")
     timeDiv3.classList.add("tile_subtitle");
+
     timeDiv3.textContent = eventRandom[3].date.when;
 
     var descriptionSpan3 = document.createElement("p");
@@ -275,6 +284,9 @@ var eventsLoop = function (data) {
     divBody6.appendChild(descriptionSpan6);
     divFooter6.appendChild(resultsBtn6);
 
+    
+saveLocalStorage(eventRandom);
+
 };
 
 /* we need to create an event handler that will populate this api within the same div. or somewhere within the page
@@ -321,6 +333,13 @@ var adventureSelected = function (event) {
     fortuneFun();
 }
 
+
+var saveLocalStorage = function (array) {
+    citiesArray = [];
+
+    citiesArray.push(array);
+    localStorage.setItem("search-history", JSON.stringify(citiesArray));
+  };
 
 // Initial date/ city/ state submite form handler
 cityGet.addEventListener("submit", formSubmit)
