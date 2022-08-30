@@ -186,20 +186,23 @@ divTest6.appendChild(descriptionSpan6);
 divTest6.appendChild(resultsBtn6);
 };
 
+  
+    var saveLocalStorage = function (array) {
+      citiesArray = [];
+  
+      citiesArray.push(array);
+      localStorage.setItem("search-history", JSON.stringify(citiesArray));
+    };
+
+
   var loadPast = function () {
     var pastSearches = JSON.parse(localStorage.getItem("search-history"));
 
-    console.log(pastSearches)
-  
-    // searchHistoryContainerEl.textContent = "";
-  
-    // for (var i = 0; i < storedCities.length; i++) {
-    //   var searchHistoryButtonEl = document.createElement("button");
-    //   searchHistoryButtonEl.textContent = storedCities[i];
-    //   searchHistoryButtonEl.setAttribute("data-search", storedCities[i]);
-    //   searchHistoryButtonEl.setAttribute("class","btn btn-secondary btn-block p-2");
-    //   searchHistoryButtonEl.setAttribute("type", "submit");
-    //   searchHistoryButtonEl.setAttribute("id", "search-history-button");
-    //   searchHistoryContainerEl.appendChild(searchHistoryButtonEl);
-    }
-//   };
+    console.log(loadPast);
+  }
+
+
+  // var loadPast = JSON.parse(localStorage.getItem('search-history'));
+  // loadPast.forEach(function (citiesArray) {
+  //   displayPastSearches(citiesArray);
+  // })
