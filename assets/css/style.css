@@ -1,6 +1,8 @@
 body {
     /* Would not display on mac unless written this way due to file path error */
     background-image:url(../images/landingpageimg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .center {
