@@ -24,5 +24,5 @@ Given a dashboard of different events, WHEN I search for a city, I will see para
 Deployed page: https://plovato97.github.io/Magic-trav/
 
 ## Image
-![screenshot](./assets/images/backgroundimg.jpeg)
+![Screenshot 2022-08-29 214901.png]
 
