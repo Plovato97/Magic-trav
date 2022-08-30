@@ -16,6 +16,23 @@ var adventureSubmit = document.querySelector("#adventureSubmit")
 
 
 
+// (function() {
+//     var cors_api_host = 'cors-anywhere.herokuapp.com';
+//     var cors_api_url = 'https://' + cors_api_host + '/';
+//     var slice = [].slice;
+//     var origin = window.location.protocol + '//' + window.location.host;
+//     var open = XMLHttpRequest.prototype.open;
+//     XMLHttpRequest.prototype.open = function() {
+//         var args = slice.call(arguments);
+//         var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+//         if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+//             targetOrigin[1] !== cors_api_host) {
+//             args[1] = cors_api_url + args[1];
+//         }
+//         return open.apply(this, args);
+//     };
+// })();
+
 // uses the submit form eleement to gather the date/city/state paremeters to be used on other functions
 var formSubmit = function(event) {
     event.preventDefault();
@@ -43,7 +60,7 @@ var formSubmit = function(event) {
 
 //  eventsfun uses the parameters for citysearch, state and date to search through the api and create an array of available events within those paremeters
 var eventsFun = function(citySearch, state, dates) {
-    var eventsApi = "https://serpapi.com/search.json?engine=google_events&q=Events+in+" + citySearch + "+" + state + "+" + dates + "&api_key=cf8b1e356c94fd5a088afa5884193906daf90a725ab4763d792e35a05f4a8ef9";
+    var eventsApi = "https://cors-anywhere.herokuapp.com/https://serpapi.com/search.json?engine=google_events&q=Events+in+" + citySearch + "+" + state + "+" + dates + "&api_key=cf8b1e356c94fd5a088afa5884193906daf90a725ab4763d792e35a05f4a8ef9";
     fetch(eventsApi)
         .then(function (res) {
             return res.json();
@@ -96,10 +113,18 @@ var eventRandom = shuffle(data.events_results);
     var timeDiv = document.createElement("h4")
     timeDiv.textContent = eventRandom[1].date.when;
 
+    var timeDiv = document.createElement("h2")
+    timeDiv.textContent = eventRandom[1].date.when;
+
     var descriptionSpan = document.createElement("div");
     descriptionSpan.classList.add("card__body");
     descriptionSpan.textContent = eventRandom[1].description;
 
+
+    divTest1.appendChild(titleSpan);
+    divTest1.appendChild(timeDiv);
+    divTest1.appendChild(descriptionSpan);
+    divTest1.appendChild(resultsBtn);
 
     /* Code to add image to card 1*/
     var imageHolder = document.createElement("img");
@@ -261,7 +286,9 @@ var eventRandom = shuffle(data.events_results);
     divTest6.appendChild(descriptionSpan6);
     divTest6.appendChild(resultsBtn6);
 
-    saveLocalStorage(eventRandom);
+
+saveLocalStorage(eventRandom);
+
 };
 
 /* we need to create an event handler that will populate this api within the same div. or somewhere within the page
@@ -308,6 +335,29 @@ var idElement = event
     fortuneFun();
 }
 
+
+var saveLocalStorage = function (array) {
+    eventsArray = JSON.parse(localStorage.getItem(cityInput)) || [];
+    eventsArray.push(array);
+    localStorage.setItem("cityInput", JSON.stringify(eventsArray));
+  };
+  
+//   var loadCities = function () {
+//     var storedCities = JSON.parse(localStorage.getItem("search-history"));
+  
+//     searchHistoryContainerEl.textContent = "";
+  
+//     for (var i = 0; i < storedCities.length; i++) {
+//       var searchHistoryButtonEl = document.createElement("button");
+//       searchHistoryButtonEl.textContent = storedCities[i];
+//       searchHistoryButtonEl.setAttribute("data-search", storedCities[i]);
+//       searchHistoryButtonEl.setAttribute("class","btn btn-secondary btn-block p-2");
+//       searchHistoryButtonEl.setAttribute("type", "submit");
+//       searchHistoryButtonEl.setAttribute("id", "search-history-button");
+//       searchHistoryContainerEl.appendChild(searchHistoryButtonEl);
+//     }
+//   };
+  
 // Initial date/ city/ state submite form handler
 cityGet.addEventListener("submit", formSubmit)
 
@@ -316,6 +366,8 @@ cityGet.addEventListener("submit", formSubmit)
 // we probably will need to create 5 other event listeners to be linked to a hidden div within the pages that will load the content once they chose their city etc.
 adventureSubmit.addEventListener("click", (event) => {
         event.preventDefault();
+
+
         console.log(event.target.id);
         adventureSelected(event.target.id)
 })
