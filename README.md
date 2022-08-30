@@ -25,6 +25,6 @@ Deployed page: https://plovato97.github.io/Magic-trav/
 
 ## Image
 ![Screenshot 2022-08-29 214901](https://user-images.githubusercontent.com/109039347/187554254-9a7b5448-ec97-414f-965c-ad3da1da407c.png)
-
+![Screenshot 2022-08-30 181659](https://user-images.githubusercontent.com/109039347/187554731-1b35c991-f105-4805-bdf5-eeae8d322f82.png)
 
 
