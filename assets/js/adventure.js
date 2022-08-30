@@ -340,20 +340,7 @@ var saveLocalStorage = function (array) {
 
     citiesArray.push(array);
     localStorage.setItem("search-history", JSON.stringify(citiesArray));
-    divTest1.appendChild('search-history');
   };
-
-  var oldEvents = JSON.parse(localStorage.getItem('search-history'));
-  oldEvents.push(saveLocalStorage);
-
-  localStorage.setItem('search-history', JSON.stringify(oldEvents));
-
-function view() {
-    if(localStorage.getItem('search-history') !=null){
-        document.getElementById('cardContent1').innerHTML = JSON.parse(localStorage.getItem('search-history'));
-    }
-}
-
 
 // Initial date/ city/ state submite form handler
 cityGet.addEventListener("submit", formSubmit)
