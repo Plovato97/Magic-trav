@@ -342,19 +342,19 @@ var saveLocalStorage = function (array) {
     localStorage.setItem("cityInput", JSON.stringify(eventsArray));
   };
   
-//   var loadCities = function () {
-//     var storedCities = JSON.parse(localStorage.getItem("search-history"));
+//   var loadPastEvents = function () {
+//     var pastEvents = JSON.parse(localStorage.getItem("city-input"));
   
-//     searchHistoryContainerEl.textContent = "";
+//     pastEventContainerEl.textContent = "";
   
-//     for (var i = 0; i < storedCities.length; i++) {
-//       var searchHistoryButtonEl = document.createElement("button");
-//       searchHistoryButtonEl.textContent = storedCities[i];
-//       searchHistoryButtonEl.setAttribute("data-search", storedCities[i]);
-//       searchHistoryButtonEl.setAttribute("class","btn btn-secondary btn-block p-2");
-//       searchHistoryButtonEl.setAttribute("type", "submit");
-//       searchHistoryButtonEl.setAttribute("id", "search-history-button");
-//       searchHistoryContainerEl.appendChild(searchHistoryButtonEl);
+//     for (var i = 0; i < saveLocalStorage.length; i++) {
+//       var pastEventButtonEl = document.createElement("button");
+//       pastEventButtonEl.textContent = saveLocalStorage[i];
+//       pastEventButtonEl.setAttribute("data-search", saveLocalStorage[i]);
+//       pastEventButtonEl.setAttribute("class","pbtn btn-secondary btn-block p-2");
+//       pastEventButtonEl.setAttribute("type", "submit");
+//       pastEventButtonEl.setAttribute("id", "search-history-button");
+//       pastEventContainerEl.appendChild(searchHistoryButtonEl);
 //     }
 //   };
   
