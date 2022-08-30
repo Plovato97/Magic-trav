@@ -187,7 +187,7 @@ divTest6.appendChild(resultsBtn6);
 };
 
   var loadPast = function () {
-    var pastSearches = JSON.parse(localStorage.getItem("past-searches"));
+    var pastSearches = JSON.parse(localStorage.getItem("search-history"));
 
     console.log(pastSearches)
   

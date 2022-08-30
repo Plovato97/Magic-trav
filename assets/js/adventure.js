@@ -313,13 +313,10 @@ var idElement = event
 
 
 var saveLocalStorage = function (array) {
+    citiesArray = [];
 
-    cityName = array;
-    console.log(cityName); 
-
-    eventsArray = JSON.parse(localStorage.setItem()) || [];
-    eventsArray.push(array);
-    localStorage.setItem(array[0].address[1], JSON.stringify(eventsArray));
+    citiesArray.push(array);
+    localStorage.setItem("search-history", JSON.stringify(citiesArray));
   };
   
 
@@ -331,8 +328,6 @@ cityGet.addEventListener("submit", formSubmit)
 // we probably will need to create 5 other event listeners to be linked to a hidden div within the pages that will load the content once they chose their city etc.
 adventureSubmit.addEventListener("click", (event) => {
         event.preventDefault();
-
-
         console.log(event.target.id);
         adventureSelected(event.target.id)
 })
