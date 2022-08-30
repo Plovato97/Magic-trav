@@ -5,7 +5,7 @@ We are building Server-Side APIs from Digital Fortune and Google Events. When yo
 
 As A Hodophile I Want to explore new places so that I can find interesting facts to the journey.
 
-Given a dashboard of different adventures, WHEN I search for a journey Then I am presented with varities of Cites With a TIME that randomly remotes me to an spontaneous location from the Google Events Website
+Given a dashboard of different events, WHEN I search for a city, I will see parameters of 6 hidden doors, it will THEN presented me with 6 random list of events availible on that date in the Google Events Website.This process the magic which you will choose a lucky number to and enjoy a random adventure.
 
 ## Made With
 
