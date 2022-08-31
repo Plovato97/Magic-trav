@@ -1,0 +1,20 @@
+.foot-img {
+    position: relative;
+    float: right;
+    padding-bottom: 10px;
+}
+
+.description {
+    text-align: center;
+    margin: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#adventureSubmit {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    
+}
