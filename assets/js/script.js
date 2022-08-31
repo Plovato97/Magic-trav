@@ -1,3 +1,6 @@
+var paulApiKey = "975536fb3351415c84e19797480ca9b3"
+var paulGoogleKey = "907ec1e8803cfbf3d22fe89f046820e63d79077da707c105cd43afe193c82645"
+
 var divTest1 = document.querySelector("#cardE1")
 var divTest2 = document.querySelector("#cardE2")
 var divTest3 = document.querySelector("#cardE3")
@@ -191,18 +194,13 @@ divTest6.appendChild(resultsBtn6);
       citiesArray = [];
   
       citiesArray.push(array);
-      localStorage.setItem("search-history", JSON.stringify(citiesArray));
+      localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
     };
 
 
   var loadPast = function () {
-    var pastSearches = JSON.parse(localStorage.getItem("search-history"));
+    var pastSearches = JSON.parse(localStorage.getItem("searchHistory"));
 
     console.log(loadPast);
   }
 
-
-  // var loadPast = JSON.parse(localStorage.getItem('search-history'));
-  // loadPast.forEach(function (citiesArray) {
-  //   displayPastSearches(citiesArray);
-  // })
