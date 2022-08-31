@@ -18,18 +18,32 @@ var divFooter4 = document.querySelector("#card4footer")
 var divFooter5 = document.querySelector("#card5footer")
 var divFooter6 = document.querySelector("#card6footer")
 
+var clearHistoryEl = document.querySelector("#clearSearch")
+var searchHistoryContainerEl = document.querySelector("#pastSearched")
+
 $(document).ready(function () {
   var pastSearches = localStorage.getItem("searchHistory");
   eventRandom = JSON.parse(pastSearches);
 
   console.log(eventRandom);
   loadLocalStorage(eventRandom)
+
+  // for (var i = 0; i < eventRandom.length; i++) {
+  //   console.log(eventRandom[i]);
+
+  // var searchHistoryButtonEl = document.createElement("button");
+  // searchHistoryButtonEl.textContent = eventRandom[i][0].address[1];
+  // searchHistoryButtonEl.setAttribute("data-search", eventRandom);
+  // searchHistoryButtonEl.setAttribute("class","btn btn-secondary btn-block p-2");
+  // searchHistoryButtonEl.setAttribute("type", "submit");
+  // searchHistoryButtonEl.setAttribute("id", "search-history-button");
+  // searchHistoryContainerEl.appendChild(searchHistoryButtonEl);
+  // }
 });
 
 
-var loadLocalStorage = function (eventRandom) {
 
-  console.log(eventRandom[0]);
+var loadLocalStorage = function (eventRandom) {
 
     /* Card ONE*/
     var resultsBtn = document.createElement("a");
