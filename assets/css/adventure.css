@@ -13,8 +13,43 @@
 }
 
 #adventureSubmit {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+    position: relative;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    display: grid;
+}
 
+#cityInput {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#destination {
+    margin-left: 20px;
+}
+
+#date {
+    margin-left: 20px;
+}
+
+#dateInput {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+#statesSelect {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#btn-main {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#fortuneTest {
+    text-align: center;
+    margin-top: 15px;
 }
