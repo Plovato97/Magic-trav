@@ -309,6 +309,16 @@ var idElement = event
     fortuneFun();
 }
 
+<<<<<<< Updated upstream
+=======
+var saveLocalStorage = function (array) {
+    citiesArray = [];
+
+    citiesArray.push(array);
+    localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
+  };
+
+>>>>>>> Stashed changes
 // Initial date/ city/ state submite form handler
 cityGet.addEventListener("submit", formSubmit)
 
