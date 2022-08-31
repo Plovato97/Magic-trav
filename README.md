@@ -10,7 +10,7 @@ Given a dashboard of different events, WHEN I search for a city, I will see para
 ## Made With
 
 * jQuery
-* Bulma
+* Cirrus
 * javascript
 * html5
 * css
