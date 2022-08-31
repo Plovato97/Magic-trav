@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 var paulApiKey = "975536fb3351415c84e19797480ca9b3"
 var paulGoogleKey = "907ec1e8803cfbf3d22fe89f046820e63d79077da707c105cd43afe193c82645"
 
@@ -196,6 +194,3 @@ titleSpan6.appendChild(timeDiv6);
 divTest6.appendChild(descriptionSpan6);
 divTest6.appendChild(resultsBtn6);
 };
-
-
->>>>>>> Stashed changes
