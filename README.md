@@ -25,8 +25,8 @@ Given a dashboard of different events, WHEN I search for a city, I will see para
 *Paul Lovato:lovato.paul97@yahoo.com
 *Benny Le:benny.le890@gmail.com
 *Zaiden:zse0296@gmail.com
-  *Hector Guerrero:hector1626hy@gmail.com
 *Jimmay Faustin:jayfaus17@icloud.com
+*Hector Guerrero:hector1626hy@gmail.com
 
 ## Live Page
 Deployed page:https://plovato97.github.io/Magic-trav/
