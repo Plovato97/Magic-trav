@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
 
-var loadLocalStorage = function (data) {
+var loadLocalStorage = function (eventRandom) {
 
 /* Card ONE*/
 var resultsBtn= document.createElement("a");
