@@ -7,14 +7,18 @@ var divTest3 = document.querySelector("#cardE3")
 var divTest4 = document.querySelector("#cardE4")
 var divTest5 = document.querySelector("#cardE5")
 var divTest6 = document.querySelector("#cardE6")
+var eventRandom = [];
 
 $(document).ready(function () {
-  var pastSearches = JSON.parse(localStorage.getItem("searchHistory"));
+  var pastSearches = localStorage.getItem("searchHistory");
+  eventRandom = JSON.parse(pastSearches);
 
-  console.log(loadPast);
+  console.log(eventRandom);
 });
 
-var loadLocalStorage = function (eventRandom) {
+
+
+var loadLocalStorage = function (data) {
 
 /* Card ONE*/
 var resultsBtn= document.createElement("a");
