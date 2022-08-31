@@ -1,6 +1,8 @@
 body {
     /* Would not display on mac unless written this way due to file path error */
     background-image:url(../images/landingpageimg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .center {
@@ -97,6 +99,10 @@ body {
     top: 0;
     border-radius: 10px;
 }
+
+.error {
+    color: red;
+};
 
 @keyframes glowing {
     0% { background-position: 0 0; }
