@@ -338,7 +338,7 @@ var saveLocalStorage = function (array) {
     citiesArray = [];
 
     citiesArray.push(array);
-    localStorage.setItem("search-history", JSON.stringify(citiesArray));
+    localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
   };
 
 // Initial date/ city/ state submite form handler
