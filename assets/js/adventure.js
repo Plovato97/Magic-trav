@@ -337,6 +337,7 @@ var adventureSelected = function (event) {
 var saveLocalStorage = function (array) {
     citiesArray = [];
 
+    citiesArray = JSON.parse(localStorage.getItem("searchHistory")) || [];
     citiesArray.push(array);
     localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
   };
