@@ -339,8 +339,9 @@ var saveLocalStorage = function (array) {
     citiesArray = [];
 
     citiesArray.push(array);
-    localStorage.setItem("search-history", JSON.stringify(citiesArray));
-    divTest1.appendChild('search-history');
+
+    localStorage.setItem("searchHistory", JSON.stringify(citiesArray));
+
   };
 
   var oldEvents = JSON.parse(localStorage.getItem('search-history'));

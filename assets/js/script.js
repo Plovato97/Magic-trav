@@ -1,208 +1,214 @@
-var divTest1 = document.querySelector("#cardE1")
-var divTest2 = document.querySelector("#cardE2")
-var divTest3 = document.querySelector("#cardE3")
-var divTest4 = document.querySelector("#cardE4")
-var divTest5 = document.querySelector("#cardE5")
-var divTest6 = document.querySelector("#cardE6")
+var divTest1 = document.querySelector("#cardContent1")
+var divTest2 = document.querySelector("#cardContent2")
+var divTest3 = document.querySelector("#cardContent3")
+var divTest4 = document.querySelector("#cardContent4")
+var divTest5 = document.querySelector("#cardContent5")
+var divTest6 = document.querySelector("#cardContent6")
+
+var divBody1 = document.querySelector("#card1body")
+var divBody2 = document.querySelector("#card2body")
+var divBody3 = document.querySelector("#card3body")
+var divBody4 = document.querySelector("#card4body")
+var divBody5 = document.querySelector("#card5body")
+var divBody6 = document.querySelector("#card6body")
+var divFooter1 = document.querySelector("#card1footer")
+var divFooter2 = document.querySelector("#card2footer")
+var divFooter3 = document.querySelector("#card3footer")
+var divFooter4 = document.querySelector("#card4footer")
+var divFooter5 = document.querySelector("#card5footer")
+var divFooter6 = document.querySelector("#card6footer")
+
+$(document).ready(function () {
+  var pastSearches = localStorage.getItem("searchHistory");
+  eventRandom = JSON.parse(pastSearches);
+
+  console.log(eventRandom);
+  loadLocalStorage(eventRandom)
+});
 
 
 var loadLocalStorage = function (eventRandom) {
-/* Card ONE*/
-var resultsBtn= document.createElement("a");
-resultsBtn.setAttribute("target", "_blank")
-resultsBtn.textContent = "Begin your Journey"
-resultsBtn.href = eventRandom[1].event_location_map.link;
 
-var titleSpan = document.createElement("h3");
-titleSpan.classList.add("card__mobile-title")
-titleSpan.textContent = eventRandom[1].title;
+  console.log(eventRandom[0]);
 
-var timeDiv = document.createElement("h6")
-timeDiv.textContent = eventRandom[1].date.when;
+    /* Card ONE*/
+    var resultsBtn = document.createElement("a");
+    resultsBtn.setAttribute("target", "_blank")
+    resultsBtn.textContent = "Begin your Journey"
+    resultsBtn.href = eventRandom[0][0].event_location_map.link;
 
-var descriptionSpan = document.createElement("div");
-descriptionSpan.classList.add("card__body");
-descriptionSpan.textContent = eventRandom[1].description;
+    var titleSpan = document.createElement("h3");
 
+    titleSpan.classList.add("tile_title");
+    titleSpan.textContent = eventRandom[0][0].title;
 
-divTest1.appendChild(titleSpan);
-divTest1.appendChild(timeDiv);
-divTest1.appendChild(descriptionSpan);
-divTest1.appendChild(resultsBtn);
+    var timeDiv = document.createElement("h6")
+    timeDiv.classList.add("tile_subtitle");
 
-/* Code to add image to card 1*/
-var imageHolder = document.createElement("img");
-imageHolder.src = "assets/images/placeholder.png";
-var src = document.getElementById("imgE1");
-divTest1.appendChild(imageHolder);
+    timeDiv.textContent = eventRandom[0][0].date.when;
+
+    var descriptionSpan = document.createElement("p");
+    descriptionSpan.textContent = eventRandom[0][0].description;
 
 
-/* CARD 2 */
-var resultsBtn2= document.createElement("a");
-resultsBtn2.setAttribute("target", "_blank")
-resultsBtn2.textContent = "Begin your Journey"
-resultsBtn2.href = eventRandom[2].event_location_map.link;
+    divTest1.appendChild(titleSpan);
+    divTest1.appendChild(timeDiv);
+    divTest1.appendChild(descriptionSpan);
+    divTest1.appendChild(resultsBtn);
 
-var titleSpan2 = document.createElement("h3");
-titleSpan2.classList.add("card__mobile-title")
-titleSpan2.textContent = eventRandom[2].title;
+    /* Code to add image to card 1*/
+    // var imageHolder = document.createElement("div").classList.add;
+    // imageHolder.src = "assets/images/placeholder.png";
+    // var src = document.getElementById("imgE1");
+    // src.appendChild(imageHolder);
 
-var timeDiv2 = document.createElement("h6")
-timeDiv2.textContent = eventRandom[2].date.when;
+    divTest1.appendChild(titleSpan);
+    divTest1.appendChild(timeDiv);
+    divBody1.appendChild(descriptionSpan);
+    divFooter1.appendChild(resultsBtn);
 
-var descriptionSpan2 = document.createElement("div");
-descriptionSpan2.classList.add("card__body");
-descriptionSpan2.textContent = eventRandom[2].description;
+    var resultsBtn2 = document.createElement("a");
+    resultsBtn2.setAttribute("target", "_blank")
+    resultsBtn2.textContent = "Begin your Journey"
+    resultsBtn2.href = eventRandom[0][1].event_location_map.link;
 
- /* Code to add image to card 2*/
- var imageHolder = document.createElement("img");
- imageHolder.src = "assets/images/placeholder.png";
- var src = document.getElementById("imgE2");
- src.appendChild(imageHolder);
+    var titleSpan2 = document.createElement("h3");
+    titleSpan2.classList.add("tile_title");
+    titleSpan2.textContent = eventRandom[0][1].title;
 
-divTest2.appendChild(titleSpan2);
-titleSpan2.appendChild(timeDiv2);
-divTest2.appendChild(descriptionSpan2);
-divTest2.appendChild(resultsBtn2);
+    var timeDiv2 = document.createElement("h6")
+    timeDiv2.classList.add("tile_subtitle");
+    timeDiv2.textContent = eventRandom[0][1].date.when;
 
-
-
-
-
-/* CARD 3 */
-var resultsBtn3= document.createElement("a");
-resultsBtn3.setAttribute("target", "_blank")
-resultsBtn3.textContent = "Begin your Journey"
-resultsBtn3.href = eventRandom[3].event_location_map.link;
-
-var titleSpan3 = document.createElement("h3");
-titleSpan3.classList.add("card__mobile-title")
-titleSpan3.textContent = eventRandom[3].title;
-
-var timeDiv3 = document.createElement("h6")
-timeDiv3.textContent = eventRandom[3].date.when;
-
-var descriptionSpan3 = document.createElement("div");
-descriptionSpan3.classList.add("card__body");
-descriptionSpan3.textContent = eventRandom[3].description;
-
- /* Code to add image to card 2*/
- var imageHolder = document.createElement("img");
- imageHolder.src = "assets/images/placeholder.png";
- var src = document.getElementById("imgE3");
- src.appendChild(imageHolder);
+    var descriptionSpan2 = document.createElement("p");
+    descriptionSpan2.textContent = eventRandom[0][1].description;
 
 
-divTest3.appendChild(titleSpan3);
-titleSpan3.appendChild(timeDiv3);
-divTest3.appendChild(descriptionSpan3);
-divTest3.appendChild(resultsBtn3);
+    /* Code to add image to card 1*/
+    // var imageHolder = document.createElement("div").classList.add;
+    // imageHolder.src = "assets/images/placeholder.png";
+    // var src = document.getElementById("imgE1");
+    // src.appendChild(imageHolder);
+
+    divTest2.appendChild(titleSpan2);
+    divTest2.appendChild(timeDiv2);
+    divBody2.appendChild(descriptionSpan2);
+    divFooter2.appendChild(resultsBtn2);
+
+    /* CARD 3 */
+    var resultsBtn3 = document.createElement("a");
+    resultsBtn3.setAttribute("target", "_blank")
+    resultsBtn3.textContent = "Begin your Journey"
+    resultsBtn3.href = eventRandom[0][2].event_location_map.link;
+
+    var titleSpan3 = document.createElement("h3");
+    titleSpan3.classList.add("tile_title");
+    titleSpan3.textContent = eventRandom[0][2].title;
+
+    var timeDiv3 = document.createElement("h6")
+    timeDiv3.classList.add("tile_subtitle");
+
+    timeDiv3.textContent = eventRandom[0][2].date.when;
+
+    var descriptionSpan3 = document.createElement("p");
+    descriptionSpan3.textContent = eventRandom[0][2].description;
 
 
-/*CARD 4 */
-var resultsBtn4= document.createElement("a");
-resultsBtn4.setAttribute("target", "_blank")
-resultsBtn4.textContent = "Begin your Journey"
-resultsBtn4.href = eventRandom[4].event_location_map.link;
+    /* Code to add image to card 1*/
+    // var imageHolder = document.createElement("div").classList.add;
+    // imageHolder.src = "assets/images/placeholder.png";
+    // var src = document.getElementById("imgE1");
+    // src.appendChild(imageHolder);
 
-var titleSpan4 = document.createElement("h3");
-titleSpan4.classList.add("card__mobile-title")
-titleSpan4.textContent = eventRandom[4].title;
+    divTest3.appendChild(titleSpan3);
+    divTest3.appendChild(timeDiv3);
+    divBody3.appendChild(descriptionSpan3);
+    divFooter3.appendChild(resultsBtn3);
 
-var timeDiv4 = document.createElement("h6")
-timeDiv4.textContent = eventRandom[4].date.when;
+    /*CARD 4 */
+    var resultsBtn4 = document.createElement("a");
+    resultsBtn4.setAttribute("target", "_blank")
+    resultsBtn4.textContent = "Begin your Journey"
+    resultsBtn4.href = eventRandom[0][3].event_location_map.link;
 
-var descriptionSpan4 = document.createElement("div");
-descriptionSpan4.classList.add("card__body");
-descriptionSpan4.textContent = eventRandom[4].description;
+    var titleSpan4 = document.createElement("h3");
+    titleSpan4.classList.add("tile_title");
+    titleSpan4.textContent = eventRandom[0][3].title;
 
- /* Code to add image to card 2*/
- var imageHolder = document.createElement("img");
- imageHolder.src = "assets/images/placeholder.png";
- var src = document.getElementById("imgE4");
- src.appendChild(imageHolder);
+    var timeDiv4 = document.createElement("h6")
+    timeDiv4.classList.add("tile_subtitle");
+    timeDiv4.textContent = eventRandom[0][3].date.when;
 
-divTest4.appendChild(titleSpan4);
-titleSpan4.appendChild(timeDiv4);
-divTest4.appendChild(descriptionSpan4);
-divTest4.appendChild(resultsBtn4);
-
-
-/* CARD 5 */
-var resultsBtn5= document.createElement("a");
-resultsBtn5.setAttribute("target", "_blank")
-resultsBtn5.textContent = "Begin your Journey"
-resultsBtn5.href = eventRandom[5].event_location_map.link;
-
-var titleSpan5 = document.createElement("h3");
-titleSpan5.classList.add("card__mobile-title")
-titleSpan5.textContent = eventRandom[5].title;
-
-var timeDiv5 = document.createElement("h6")
-timeDiv5.textContent = eventRandom[5].date.when;
-
-var descriptionSpan5 = document.createElement("div");
-descriptionSpan5.classList.add("card__body");
-descriptionSpan5.textContent = eventRandom[5].description;
-
- /* Code to add image to card 2*/
- var imageHolder = document.createElement("img");
- imageHolder.src = "assets/images/placeholder.png";
- var src = document.getElementById("imgE5");
- src.appendChild(imageHolder);
-
-divTest5.appendChild(titleSpan5);
-titleSpan5.appendChild(timeDiv5);
-divTest5.appendChild(descriptionSpan5);
-divTest5.appendChild(resultsBtn5);
+    var descriptionSpan4 = document.createElement("p");
+    descriptionSpan4.textContent = eventRandom[0][3].description;
 
 
-/* CARD 6 */
-var resultsBtn6= document.createElement("a");
-resultsBtn6.setAttribute("target", "_blank")
-resultsBtn6.textContent = "Begin your Journey"
-resultsBtn6.href = eventRandom[6].event_location_map.link;
+    /* Code to add image to card 1*/
+    // var imageHolder = document.createElement("div").classList.add;
+    // imageHolder.src = "assets/images/placeholder.png";
+    // var src = document.getElementById("imgE1");
+    // src.appendChild(imageHolder);
 
-var titleSpan6 = document.createElement("h3");
-titleSpan6.classList.add("card__mobile-title")
-titleSpan6.textContent = eventRandom[6].title;
+    divTest4.appendChild(titleSpan4);
+    divTest4.appendChild(timeDiv4);
+    divBody4.appendChild(descriptionSpan4);
+    divFooter4.appendChild(resultsBtn4);
 
-var timeDiv6 = document.createElement("h6")
-timeDiv6.textContent = eventRandom[6].date.when;
+    /* CARD 5 */
+    var resultsBtn5 = document.createElement("a");
+    resultsBtn5.setAttribute("target", "_blank")
+    resultsBtn5.textContent = "Begin your Journey"
+    resultsBtn5.href = eventRandom[0][4].event_location_map.link;
 
-var descriptionSpan6 = document.createElement("div");
-descriptionSpan6.classList.add("card__body");
-descriptionSpan6.textContent = eventRandom[6].description;
+    var titleSpan5 = document.createElement("h3");
+    titleSpan5.classList.add("tile_title");
+    titleSpan5.textContent = eventRandom[0][4].title;
 
- /* Code to add image to card 2*/
- var imageHolder = document.createElement("img");
- imageHolder.src = "assets/images/placeholder.png";
- var src = document.getElementById("imgE6");
- src.appendChild(imageHolder);
+    var timeDiv5 = document.createElement("h6")
+    timeDiv5.classList.add("tile_subtitle");
+    timeDiv5.textContent = eventRandom[0][4].date.when;
 
-divTest6.appendChild(titleSpan6);
-titleSpan6.appendChild(timeDiv6);
-divTest6.appendChild(descriptionSpan6);
-divTest6.appendChild(resultsBtn6);
+    var descriptionSpan5 = document.createElement("p");
+    descriptionSpan5.textContent = eventRandom[0][4].description;
+
+    /* Code to add image to card 1*/
+    // var imageHolder = document.createElement("div").classList.add;
+    // imageHolder.src = "assets/images/placeholder.png";
+    // var src = document.getElementById("imgE1");
+    // src.appendChild(imageHolder);
+
+    divTest5.appendChild(titleSpan5);
+    divTest5.appendChild(timeDiv5);
+    divBody5.appendChild(descriptionSpan5);
+    divFooter5.appendChild(resultsBtn5);
+
+    /* CARD 6 */
+    var resultsBtn6 = document.createElement("a");
+    resultsBtn6.setAttribute("target", "_blank")
+    resultsBtn6.textContent = "Begin your Journey"
+    resultsBtn6.href = eventRandom[0][5].event_location_map.link;
+
+    var titleSpan6 = document.createElement("h3");
+    titleSpan6.classList.add("tile_title");
+    titleSpan6.textContent = eventRandom[0][5].title;
+
+    var timeDiv6 = document.createElement("h6")
+    timeDiv6.classList.add("tile_subtitle");
+    timeDiv6.textContent = eventRandom[0][5].date.when;
+
+    var descriptionSpan6 = document.createElement("p");
+    descriptionSpan6.textContent = eventRandom[0][5].description;
+
+
+    /* Code to add image to card 1*/
+    // var imageHolder = document.createElement("div").classList.add;
+    // imageHolder.src = "assets/images/placeholder.png";
+    // var src = document.getElementById("imgE1");
+    // src.appendChild(imageHolder);
+
+    divTest6.appendChild(titleSpan6);
+    divTest6.appendChild(timeDiv6);
+    divBody6.appendChild(descriptionSpan6);
+    divFooter6.appendChild(resultsBtn6);
 };
 
-  
-    var saveLocalStorage = function (array) {
-      citiesArray = [];
-  
-      citiesArray.push(array);
-      localStorage.setItem("search-history", JSON.stringify(citiesArray));
-    };
-
-
-  var loadPast = function () {
-    var pastSearches = JSON.parse(localStorage.getItem("search-history"));
-
-    console.log(loadPast);
-  }
-
-
-  // var loadPast = JSON.parse(localStorage.getItem('search-history'));
-  // loadPast.forEach(function (citiesArray) {
-  //   displayPastSearches(citiesArray);
-  // })
