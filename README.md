@@ -24,6 +24,8 @@ Given a dashboard of different events, WHEN I search for a city, I will see para
 Deployed page: https://plovato97.github.io/Magic-trav/
 
 ## Image
-Screenshot 2022-08-29 214901.png
+![Webpagesite](./assets/images/Journey-main.png "Our Web Page Img")
 
+## Warnings
 
+BEFORE CLICKING ON DEPLOYED SITE, please click on https://cors-anywhere.herokuapp.com/corsdemo for temporary CORS access in order for webpage to work. We've decided that for future development, we could get it to work without the CORS. However, we were told to continue the project because of how much we had put into our site.
